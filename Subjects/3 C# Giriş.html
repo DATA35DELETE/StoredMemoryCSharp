@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script src="../main.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>C# : Giriş</title>
+</head>
+<body>
+    <h1>Giriş</h1>
+
+    <h2>Yazılım Nedir?</h2>
+    <pre id="preh2">    Yazılım, bir bilgisayardaki donanımlara ne yapacaklarını elektriksel olarak ifade eden kod veya kod bütünlüğüdür.</pre>
+
+    <pre id="preh2">    Günlük hayatta yazılım, özellikle günümüzde, neredeyse tüm teknolojik aletlerde kullanılmaktadır. Örneğin, şu an bu SMC#’ü okumanızı sağlayan telefon, tablet veya bilgisayar gibi cihazlarda, siz görmeseniz de arkada binlerce kod çalışır ve ekrana bu bilgiler gönderilerek sizin bu yazıları okumanızı sağlar. Eğer yazılım diye bir kavram olmasaydı, bu cihazlar ve günümüzde çoğu alet işlevsiz kalırdı. Ayrıca donanım dediğimiz, yazılımın var olmasını sağlayan devrelerdir. Eğer yazılım var olmasaydı yer kaplamaktan başka bir işe yaramazdı. Günümüzde yapay zeka gibi fenomenler sayesinde yazılıma ilgi daha da artmıştır.</pre>
+
+    <h2>Yazılım Dilleri</h2>
+    <pre id="preh2">    Yazılım dilleri, yazılımı insan dillerine benzeterek oluşturulan özel dillerdir. Aynı İngilizce, Türkçe veya İspanyolca gibi, yazılım dilleri arasında Python, Java, Ruby gibi yüzlerce dil ortaya çıkmıştır. Bunlardan en popüler olanlar Python ve Java’dır.</pre>
+
+    <pre id="preh2">    Yazılım dillerinin türleri vardır. Bu, bir derecelendirme meselesidir. Genel olarak Low-Level ve High-Level olarak iki türe ayrılır. Bu derecelendirme, sanılanın aksine kolaylık değil, İngilizce’ye yakınlık meselesidir. Low-Level, İngilizce’ye uzak; High-Level ise yakın olduğunu ifade eder. Örneğin, Low-Level olan C++’taki bir kod, High-Level olan Python’daki bir koddan daha zor anlaşılır.</pre>
+
+    <h2>C# Nedir?</h2>
+    <pre id="preh2">    Geldik SMC#’ün konusu olan C# yazılım diline! Bu dil, 2000 yılında Microsoft tarafından .NET teknolojisi için geliştirilmiş, C familyasına ait bir programlama dilidir. Bu dil, High-Level olarak derecelendirilir ve öğrenimi, aynı familyadan olan C ve C++’ın aksine daha kolaydır. Java ile benzerliği sayesinde, Java bilenler için C# bir ayda öğrenilebilir bir programlama dilidir.</pre>
+
+    <h2>İlk Program</h2>
+    <pre id="preh2">    IDE kurulumundan önce bu komutları görmenizi isterim:</pre>
+
+    <pre id="codeh2"><code class="language-csharp">using System; // Kullanılan kütüphaneler
+
+namespace storedMemoryCSharp // Proje adı
+{
+    class main // Sınıf adı
+    {
+        static void Main(string[] args) // Ana fonksiyon
+        {
+            Console.WriteLine("Hello World");
+
+            Console.Write("Hello ");
+            Console.Write("World");
+        }
+    }
+}</code></pre>
+
+    <h3>Console.WriteLine ve Console.Write Farkı</h3>
+    <pre id="preh3">    Özünde aynı işi yapsalar da, <code>Console.WriteLine</code> satır koyarak, <code>Console.Write</code> ise satır bırakmayarak konsola yazdırır.</pre>
+
+    <h2>Kaynakça</h2>
+    <ul>
+        <li><a href="https://tr.wikipedia.org/wiki/C_Sharp" target="_blank" rel="noopener noreferrer">C#</a></li>
+    </ul>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='2 C%23 Ön Söz.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='4 C%23 IDE Kurulumu.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

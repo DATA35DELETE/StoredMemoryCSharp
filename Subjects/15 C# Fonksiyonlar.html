@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script src="../main.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>C# : Fonksiyonlar</title>
+</head>
+<body>
+    <h1>Fonksiyonlar</h1>
+    <h2>Fonksiyon Nedir?</h2>
+    <pre id="preh2">    Fonksiyon, birden fazla kod parçasını bir arada tutan yapıdır. Yani fonksiyonun içerisinde birden fazla kod bulunur ve tek bir komutla o kodlar çalıştırılır. Genellikle birden fazla yerde kullanılacak kod parçalarını tek bir yerde tutarak kod tasarrufu sağlayan yapılardır. Oluşturma formülü: erişimBelirteci static geriyeDeğerDöndürmeTürü fonksiyonAdı(parametreler) { Kodlar }. Çağırma formülü: fonksiyonAdı(parametre);</pre>
+
+    <h2>Void Fonksiyonlar</h2>
+    <pre id="preh2">    Void fonksiyonlar, geriye değer döndürmeyen fonksiyonlardır. Yani bu fonksiyonlar çağrıldığında bir değer döndürmez.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">public static void fonksiyon()
+{
+    // Kodlar
+}</code></pre>
+
+    <h2>Return’lü Fonksiyonlar</h2>
+    <pre id="preh2">    Return’lü fonksiyonlar, void fonksiyonların aksine geriye değer döndürür. "return" ifadesi ile değer döndürülür. Eğer return kullanılmazsa hata oluşur.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">public static int fonksiyon()
+{
+    // Kodlar
+
+    return 15; // Bu kısımda değer döndürülür
+}</code></pre>
+
+    <h2>Parametreler</h2>
+    <pre id="preh2">    Parametre, fonksiyonların parantezlerinde tanımlanan verilerdir ve fonksiyonlar arasında iletişimi sağlar. Fonksiyon oluşturulurken parantezlerine "veriTürü veriAdı" şeklinde tanımlanır.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">public static void yazdir(string text)
+{
+    Console.WriteLine(text);
+}
+
+...
+
+yazdir("Hello");
+// Konsolda "Hello" yazısı görülecektir.
+}</code></pre>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='14 C%23 Proje.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='16 C%23 Sınıflar.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+    
+    <div style="height: 100px;"></div>
+</body>
+</html>

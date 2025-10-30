@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../main.css">
+    <script src="../main.js"></script>
+
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min..js"></script>
+    <script>
+        hljs.highlightAll();
+        hljs.initLineNumbersOnLoad();
+    </script>
+
+    <title>Dapper : Kullanımı</title>
+
+</head>
+<body>
+    <h1>Kullanımı</h1>
+
+    <h2>Bağlantı Kurma ve Kütüphaneler</h2>
+    <pre id="preh2">    Bağlantı kurmak için kütüphaneleri projemize dahil etmek gerekir. Bunun için;</pre>
+
+    <pre id="codeh2"><code class="language-csharp">using Dapper;
+using MySql.Data.MySqlClient;</code>
+    Kütüphanelerini ekleyelim.</pre>
+
+    <h2>Bağlantı Kurma</h2>
+    <pre id="preh2">    Bağlantı kurmak için ilk önce bağlantı sorgusu yazmamız gerek.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">string conn = "Server=localhost;" + // Server IP'si
+    "Database=database;" + // Bağlancak veritabını ismi
+    "User ID=root;" + // Yetkilendirme
+    "Password=password;"; // Şifre</code>
+    Şeklinde bir sorgu yazılmalıdır.</pre>
+
+    <pre id="codeh2">   Ardından;
+<code class="language-csharp">using var connection = new MySqlConnection(conn); // Bağlantıyı gönder
+connection.Open(); // Bağlantıyı aç</code>
+    ile de bağlantımız kurulmuş olur.</pre>
+
+    <h2>Sorgu Gönder ve Veri Alımı</h2>
+    <pre id="codeh2"><code class="language-csharp">var result = connection.Query("SHOW DATABASES;"); // SQL sorgusunu gönder ve gelen veriyi al</code>
+    Veriyi göstermek içinse;
+<code class="language-csharp">foreach (var db in result)                           //
+{                                                    // Sonuçları foreach ile 
+    Console.WriteLine($"Veritabanı: {db.Database}"); //  döndürerek yazıdır
+}</code>
+    Kullanılır.</pre>
+
+    <h2>Kaynakça</h2>
+    <ul>
+        <li><a href="https://www.example.com" target="_blank" rel="noopener noreferrer">Example Kaynak 1</a></li>
+    </ul>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a href="" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a href="" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork'dur.</p>
+        </div>
+
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

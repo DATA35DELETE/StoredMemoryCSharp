@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>C# : Karar Yapıları</title>
+</head>
+<body>
+    <h1>Karar Yapıları</h1>
+
+    <h2>Karar Yapıları Nedir?</h2>
+    <pre id="preh2">    Karar yapıları, programlamada koşullara göre farklı yollar izlemeyi sağlayan yapılardır.</pre>
+
+    <pre id="preh2">    Karar yapıları sayesinde koşullara göre farklı kodlar çalıştırabiliriz. Örneğin, bir banka sisteminde kullanıcı ismini ve şifresini giriyor. Bu verilerle sistemi kontrol ederek, kullanıcı varsa hoş geldin ekranı, yoksa hata mesajı gösterebiliriz.</pre>
+
+    <h2>If-Else If-Else</h2>
+
+    <h3>If</h3>
+    <pre id="preh3">    If, bu yapının başıdır. İlk olarak onun koşullarına bakılır. Parantezlerindeki koşul true ise kod bloğu çalışır.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">if (koşul)
+{
+    // Koşul true ise burası çalışır
+}</code></pre>
+
+    <h3>Else If</h3>
+    <pre id="preh3">    Else If, bu yapının ara elemanıdır. Bir If’in altına konulmalıdır. If çalışmaz ve parantezlerindeki koşul true ise kod bloğu çalışır.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">if (koşul1)
+{
+    // Koşul1 true ise burası çalışır
+}
+else if (koşul2)
+{
+    // Koşul1 false ve Koşul2 true ise burası çalışır
+}</code></pre>
+
+    <h3>Else</h3>
+    <pre id="preh3">    Else, bu yapının son elemanıdır. Else If’in aksine bir If’in altına en fazla bir tane Else konulabilir. If ve Else If’ler çalışmazsa kendi kod bloğu çalışır.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">if (koşul1)
+{
+    // Koşul1 true ise burası çalışır
+}
+else if (koşul2)
+{
+    // Koşul1 false ve Koşul2 true ise burası çalışır
+}
+else
+{
+    // Koşul1 ve Koşul2 false ise burası çalışır
+}</code></pre>
+
+    <h2>Ternary Operatörü</h2>
+    <pre id="preh2">    Ternary operatörü, kısa bir If-Else bloğu gibi çalışır. Koşul doğruysa soru işareti (?)’nin sağ tarafı, yanlışsa iki nokta (:)’nın sağ tarafı çalışır.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">bool koşul = true;
+bool koşul2 = false;
+
+Console.WriteLine(koşul ? "Koşul true" : "Koşul false"); // Konsola “Koşul true” yazdırır
+Console.WriteLine(koşul2 ? "Koşul2 true" : "Koşul2 false"); // Konsola “Koşul2 false” yazdırır</code></pre>
+
+    <h2>Switch-Case</h2>
+    <pre id="preh2">    Switch-Case yapısı, tek bir veriyi sorgulamak için kullanılır. Mantık olarak If-Else If-Else yapısıyla aynıdır. Birlikte kullanılmalıdır.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">string renk = "Kırmızı";
+
+switch (renk) // Sorgulanacak veri
+{
+    case "Kırmızı": // Eğer renk değişkeni “Kırmızı” ise
+        Console.WriteLine("Renk Kırmızı");
+        break; // Break, Case’in sonlandığını belirtir. Yoksa diğer Case’ler de çalışır
+
+    case "Mavi": // Eğer renk değişkeni “Mavi” ise
+        Console.WriteLine("Renk Mavi");
+        break;
+
+    case "Yeşil": // Eğer renk değişkeni “Yeşil” ise
+        Console.WriteLine("Renk Yeşil");
+        break;
+
+    default: // Eğer Case’ler hiçbiri değilse, Else gibi çalışır
+        Console.WriteLine("Bilinmeyen Renk");
+        break;
+}</code></pre>
+
+    <h2>Kaynakça</h2>
+    <ul>
+        <li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/selection-statements" target="_blank" rel="noopener noreferrer">C# If-Else If-Else ve Switch-Case Yapıları</a></li>
+        <li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator" target="_blank" rel="noopener noreferrer">C# Ternary Operatörü</a></li>
+    </ul>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='6 C%23 Operatörler.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='8 C%23 Döngüler.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+    </footer>
+</body>
+</html>

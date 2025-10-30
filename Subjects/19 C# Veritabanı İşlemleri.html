@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <script src="../main.js"></script>
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>C# : Veritabanı İşlemleri</title>
+</head>
+<body>
+    <h1>Veritabanı İşlemleri</h1>
+
+    <h2>Veritabanı Nedir?</h2>
+    <pre id="preh2">    Veritabanı, verileri düzenli bir şekilde depolamak için kullanılan bir sistemdir. Veritabanları genellikle web dünyasında kullanıcı verilerini, hesap bilgilerini ve şifreleri saklamak için kullanılır.</pre>
+
+    <pre id="preh2">    Bu sayfada veritabanı işlemleri MariaDB ve HeidiSQL ile anlatılacaktır.</pre>
+
+    <h2>MariaDB ve HeidiSQL</h2>
+    <pre id="preh2">    MariaDB, SQL tabanlı bir veritabanı yönetim sistemidir ve genellikle HeidiSQL ile grafik arayüz (GUI) sunar.</pre>
+
+    <h3>Kurulum</h3>
+    <pre id="preh3">    Öncelikle MariaDB’nin <a href="https://mariadb.org">resmi sitesine</a> gidip kurulum dosyasını indirelim.</pre>
+    
+    <div id="divh3Img">
+        <img src="img/19.1.png" alt="19.1" width="700px">
+    </div>
+
+    <div id="divh3Img">
+        <img src="img/19.2.png" alt="19.2" width="700px">
+    </div>
+
+    <pre id="preh3">    Ardından indirilen .msi dosyasını çalıştıralım.</pre>
+
+    <div id="divh3Img">
+        <img src="img/19.3.png" alt="19.3" width="700px">
+    </div>
+
+    <div id="divh3Img">
+        <img src="img/19.4.png" alt="19.4" width="700px">
+    </div>
+
+    <pre id="preh3">    Bu kısımda unutmayacağınız bir şifre girin.</pre>
+
+    <div id="divh3Img">
+        <img src="img/19.5.png" alt="19.5" width="700px">
+    </div>
+
+    <div id="divh3Img">
+        <img src="img/19.6.png" alt="19.6" width="700px">
+    </div>
+
+    <div id="divh3Img">
+        <img src="img/19.7.png" alt="19.7" width="700px">
+    </div>
+
+    <div id="divh3Img">
+        <img src="img/19.8.png" alt="19.8" width="700px">
+    </div>
+
+    <pre id="preh3">    Yükleme işlemi tamamlandıktan sonra ‘Finish’ deyip kurulumu tamamlıyoruz.</pre>
+
+    <pre id="preh3">    Ayrıca MariaDB kurulumu sırasında HeidiSQL otomatik olarak indirilir.</pre>
+
+    <h3>HeidiSQL ile Veritabanı Oluşturma</h3>
+    <pre id="preh3">    Masaüstündeki HeidiSQL simgesine çift tıklayarak açıyoruz. Ardından:</pre>
+
+    <div id="divh3Img">
+        <img src="img/19.9.png" alt="19.9" width="700px">
+    </div>
+
+    <div id="divh3Img">
+        <img src="img/19.10.png" alt="19.10" width="700px">
+    </div>
+
+    <pre id="preh3">    Ardından ‘Aç’ butonuna basarak veritabanımızı açıyoruz.</pre>
+
+    <pre id="preh3">    Açılan pencerenin sol kısmına tıklayıp <code>Yeni > Veritabanı</code> seçeneğini seçerek veritabanımızın adını girip ‘Tamam’ butonuna basıyoruz. Tablo oluşturmak için, verileri daha düzenli gruplandırmak adına veritabanımıza sol tıklayıp açılan menüde sağ tıklayarak <code>Yeni > Tablo</code> seçeneğini seçiyoruz ve tablomuzun adını giriyoruz.</pre>
+
+    <pre id="preh3">    Şimdi tablomuzda olacak veri türlerini girmemiz gerekiyor. Alttaki menüde ‘Yeni’ butonuna basalım. Veri türü adını ‘int1’, tipini ‘INT’ yapalım ve bir tane daha oluşturup bu sefer veri türü adını ‘yazi1’, tipini ‘TEXT’ yapalım. Ardından Ctrl + S kombinasyonu ile yaptıklarımızı kaydedelim.</pre>
+
+    <h2>C# ile Veritabanı İşlemleri</h2>
+    <pre id="preh2">    MariaDB’yi kurduk, şimdi C# ile veri alıp vermeyi ve silmeyi öğrenelim. C#’ta MySQL tabanlı veritabanlarına bağlanmak için Visual Studio’da <code>Araçlar > NuGet Paket Yöneticisi > Çözüm için NuGet Paketlerini Yönet</code> seçeneğine gidip ‘MySqlConnector’ aratarak ilk çıkan paketi kuralım.</pre>
+
+    <h3>Fonksiyonları</h3>
+    <pre id="codeh3"><code class="language-csharp">using MySql.Data.MySqlClient;
+
+static void Main(string[] args)
+{
+    string connStr = "Server=localhost;" + // Veritabanının yolu (URL). localhost, yani kendi bilgisayarımızda olduğu için
+        "Port=3306;" + // Veritabanının portu
+        "Database=test;" + // Veritabanının adı
+        "Uid=root;" + // Kullanıcı adı. Veri çekmek ve yazmak için root
+        "Pwd=sifren;"; // Kullanıcının şifresi, kurulumda belirlediğimiz şifre
+
+    // Tabloyu oluştur (bir kere çalıştır)
+    TabloOlustur(connStr);
+
+    // CRUD işlemlerini teker teker test et
+    // 1. Create
+    KullaniciEkle(connStr, "Ahmet", 15);
+    KullaniciEkle(connStr, "Zeynep", 17);
+
+    // 2. Read
+    KullanicilariOku(connStr);
+
+    // 3. Update
+    KullaniciGuncelle(connStr, 1, "Ahmet Yeni", 16);
+    KullanicilariOku(connStr);
+
+    // 4. Delete
+    KullaniciSil(connStr, 2);
+    KullanicilariOku(connStr);
+}
+
+// Tablo Oluşturma
+static void TabloOlustur(string connStr)
+{
+    using var conn = new MySqlConnection(connStr); // Bağlantı bilgileri ile az önce oluşturduğumuz veritabanına bağlanıyoruz
+    conn.Open(); // Bağlantıyı açıyoruz
+    string sql = @"
+        CREATE TABLE IF NOT EXISTS Kullanicilar (
+            Id INT AUTO_INCREMENT PRIMARY KEY,
+            Ad VARCHAR(100) NOT NULL,
+            Yas INT
+        )"; // Kullanicilar adında bir tabloya Ad ve Yas sütunlarını ekliyoruz
+    using var cmd = new MySqlCommand(sql, conn); // MySqlCommand ile sorguya çeviriyoruz
+    cmd.ExecuteNonQuery(); // Sorguyu çalıştırıyoruz
+}
+
+// CREATE: Kullanıcı Ekleme
+static void KullaniciEkle(string connStr, string ad, int yas)
+{
+    using var conn = new MySqlConnection(connStr);
+    conn.Open();
+    string sql = "INSERT INTO Kullanicilar (Ad, Yas) VALUES (@ad, @yas)"; // Sorguyu oluşturuyoruz. @ ile değişkenlerimizi tanımlayarak SQL Injection’ı önlüyoruz
+    using var cmd = new MySqlCommand(sql, conn);
+    cmd.Parameters.AddWithValue("@ad", ad); // Değişkenlerin yerine, fonksiyondan gelen parametreleri yerleştiriyoruz
+    cmd.Parameters.AddWithValue("@yas", yas); // Değişkenlerin yerine, fonksiyondan gelen parametreleri yerleştiriyoruz
+    cmd.ExecuteNonQuery();
+}
+
+// READ: Kullanıcıları Okuma
+static void KullanicilariOku(string connStr)
+{
+    using var conn = new MySqlConnection(connStr);
+    conn.Open();
+    string sql = "SELECT * FROM Kullanicilar"; // Kullanicilar tablosundaki verileri çekiyoruz
+    using var cmd = new MySqlCommand(sql, conn);
+    using var reader = cmd.ExecuteReader(); // Verileri okuyoruz ve reader değişkenine atarak daha kolay ayrıştırıyoruz
+    Console.WriteLine("\nKullanıcılar:");
+    if (!reader.HasRows)                        //
+    {                                           // Tablonun içinde veri
+        Console.WriteLine("Kayıt bulunamadı."); // yoksa hata mesajı verelim
+        return;                                 //
+    }                                           
+    while (reader.Read())                                     //
+    {                                                         //
+        int id = reader.GetInt32("Id");                       //
+        string ad = reader.GetString("Ad");                   // Verileri tek tek okuyup yazdırma
+        int yas = reader.GetInt32("Yas");                     //
+        Console.WriteLine($"ID: {id}, Ad: {ad}, Yaş: {yas}"); //
+    }                                                         //
+}
+
+// UPDATE: Kullanıcı Güncelleme
+static void KullaniciGuncelle(string connStr, int id, string yeniAd, int yeniYas)
+{
+    using var conn = new MySqlConnection(connStr);
+    conn.Open();
+    string sql = "UPDATE Kullanicilar SET Ad = @ad, Yas = @yas WHERE Id = @id"; // Belirli bir ID’deki veriyi güncelleyecek
+    using var cmd = new MySqlCommand(sql, conn);
+    cmd.Parameters.AddWithValue("@ad", yeniAd); // Güncellenecek Ad
+    cmd.Parameters.AddWithValue("@yas", yeniYas); // Güncellenecek Yas
+    cmd.Parameters.AddWithValue("@id", id); // ID’si
+    cmd.ExecuteNonQuery();
+}
+
+// DELETE: Kullanıcı Silme
+static void KullaniciSil(string connStr, int id)
+{
+    using var conn = new MySqlConnection(connStr);
+    conn.Open();
+    string sql = "DELETE FROM Kullanicilar WHERE Id = @id"; // ID’sine göre veriyi silelim
+    using var cmd = new MySqlCommand(sql, conn);
+    cmd.Parameters.AddWithValue("@id", id);
+    int etkilenenSatir = cmd.ExecuteNonQuery();
+    Console.WriteLine(etkilenenSatir > 0 ? $"ID {id} silindi." : "Silme başarısız.");
+}</code></pre>
+
+    <h2>Kaynakça</h2>
+    <ul>
+        <li><a href="https://www.youtube.com/watch?v=PtXKKMxHteU&t=140s" target="_blank" rel="noopener noreferrer">C# Veritabanına Bağlanma ve CRUD İşlemleri</a></li>
+    </ul>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='18 C%23 Dosya İşlemleri.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='20 C%23 Pencere Sistemi.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

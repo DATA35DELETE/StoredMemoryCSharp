@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <script src="../main.js"></script>
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script>    
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>C# : Pencere Sistemi</title>
+</head>
+<body>
+    <h1>Pencere Sistemi</h1>
+
+    <h2>Pencere Nedir?</h2>
+    <pre id="preh2">    Pencere, bilgisayar yazılımlarında kullanıcının grafik arayüzle etkileşime girebildiği bileşenlerdir.</pre>
+
+    <pre id="preh2">    Pencerelerin olmadığı dönemlerde, insanlar siyah-beyaz ekranlarda yalnızca yazılarla etkileşime girerdi. Pencereler sayesinde yazılarla etkileşim daha kolay ve pratik hale geldi.</pre>
+
+    <pre id="preh2">    C# programlama dilinde pencere sistemi <code class="language-csharp">System.Windows.Forms</code> kütüphanesi ile mümkün olur.</pre>
+
+    <h2>Visual Studio ile Form Tasarlama</h2>
+    <pre id="preh2">    Visual Studio sayesinde görsel olarak form tasarlamak mümkündür. Form tasarlamak için Visual Studio’da form projesi açmamız gerekiyor.</pre>
+
+    <h3>Proje Açma</h3>
+    <pre id="preh3">    Önce Visual Studio’yu açalım. Ardından proje kısmında ‘Windows Forms Uygulaması (.NET Framework)’ aratarak Windows Form uygulamamızı oluşturalım. Projemizin adını girip projemizi oluşturalım.</pre>
+
+    <h2>Arayüzü Tanıyalım</h2>
+
+    <div id="divh2Img">
+        <img src="img/20.1.PNG" alt="20.1" width="800px">
+    </div>
+
+    <h3>GUI</h3>
+    <pre id="preh3">    GUI, kullanıcının gördüğü grafik arayüzdür. Toolbox’tan istediğimiz bileşeni sürükleyip bıraktığımızda penceremizde otomatik olarak oluşur.</pre>
+
+    <h3>Toolbox</h3>
+    <pre id="preh3">    Toolbox, GUI’ya ekleyeceğimiz bileşenleri arayıp penceremize ekleyebileceğimiz bileşenleri içerir.</pre>
+
+    <h3>Özellikler Penceresi</h3>
+    <pre id="preh3">    Özellikler penceresi, bileşenlerimizin özelliklerine (örneğin Text, Size, Location) erişebileceğimiz penceredir.</pre>
+
+    <div id="divh3Video">
+        <div id="divh2Video">
+            <video width="400px" muted autoplay loop>
+                <source src="../Subjects/vid/ruiruiWallpaper.mp4" type="video/mp4">
+                Tarayıcınız video etiketini desteklemiyor.
+            </video>
+        </div> 
+    </div>
+
+    <h2>Bileşenlerin Özellikleri</h2>
+    <pre id="preh2">    Özellikler penceresindeki özelliklere bakalım.</pre>
+
+    <h3>Enabled</h3>
+    <pre id="preh3">    Enabled, bileşenin kullanılabilirliğini açıp kapatan bir özelliktir.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">X.Enabled = true; // veya false</code></pre>
+
+    <h3>BackColor</h3>
+    <pre id="preh3">    BackColor, bileşenin arka plan rengini değiştirir.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">using System.Drawing;
+
+X.BackColor = Color.White;</code></pre>
+
+    <h3>Cursor</h3>
+    <pre id="preh3">    Cursor, mouse imlecinin bileşenin üstüne geldiğinde imlecin görünümünü değiştirir.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">using System.Windows.Forms;
+
+X.Cursor = Cursors.Hand;</code></pre>
+
+    <h3>Font</h3>
+    <pre id="preh3">    Font, bileşenin yazıya sahip olması durumunda yazı stilini değiştirir.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">using System.Drawing;
+
+X.Font = new Font("Arial", 14, FontStyle.Bold);</code></pre>
+
+    <h3>ForeColor</h3>
+    <pre id="preh3">    ForeColor, bileşenin yazıya sahip olması durumunda yazının rengini değiştirir.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">using System.Drawing;
+
+X.ForeColor = Color.White;</code></pre>
+
+    <h3>RightToLeft</h3>
+    <pre id="preh3">    RightToLeft, bileşenin yazıya sahip olması durumunda yazıları bileşenin solunda veya sağında başlatır.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">using System.Windows.Forms;
+
+X.RightToLeft = RightToLeft.Yes; // Sağdan başlatır
+X.RightToLeft = RightToLeft.No;  // Soldan başlatır</code></pre>
+
+    <h3>Text</h3>
+    <pre id="preh3">    Text, bileşenin yazıya sahip olması durumunda yazısını değiştirir.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">X.Text = "Yazı";</code></pre>
+
+    <h3>Visible</h3>
+    <pre id="preh3">    Visible, bileşenin görünürlüğünü açar veya kapatır.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">X.Visible = true; // veya false</code></pre>
+
+    <h3>Size</h3>
+    <pre id="preh3">    Size, bileşenin boyutunu ayarlar.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">using System.Drawing;
+
+X.Size = new Size(width, height);</code></pre>
+
+    <h3>Location</h3>
+    <pre id="preh3">    Location, bileşenin konumunu ayarlar.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">using System.Drawing;
+
+X.Location = new Point(x, y);</code></pre>
+
+    <h3>AutoSize</h3>
+    <pre id="preh3">    AutoSize, bileşenin yazısına göre otomatik boyutlandırılmasını sağlar.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">X.AutoSize = true; // veya false</code></pre>
+
+    <h3>Anchor</h3>
+    <pre id="preh3">    Anchor, bileşenin pencere boyutuna göre sabitlenmesini sağlar.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">using System.Windows.Forms;
+
+X.Anchor = AnchorStyles.Top | AnchorStyles.Left; // veya Bottom, Right</code></pre>
+
+    <h3>Locked</h3>
+    <pre id="preh3">    Locked, tasarımcının bileşenin özelliklerine müdahale etmesini önler.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">X.Locked = true; // veya false</code></pre>
+
+    <h3>AllowDrop</h3>
+    <pre id="preh3">    AllowDrop, bileşene dosya sürükleyip bırakmayı açar veya kapatır.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">X.AllowDrop = true; // veya false</code></pre>
+
+    <h3>Name</h3>
+    <pre id="preh3">    Name, bileşenin kodlarımızda erişmemizi sağlayan tanımlayıcıdır.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">X.Name = "Id1";</code></pre>
+
+    <h2>Bileşenler</h2>
+    <pre id="preh2">    Bileşenlerin özelliklerini gördük, şimdi bileşenleri tanıyalım.</pre>
+
+    <h3>Button</h3>
+    <pre id="preh3">    Button, kullanıcının etkileşime girebileceği bir bileşendir. Tıklanabilir.</pre>
+
+    <div id="divh3Img">
+        <img src="img/20.2.png" alt="20.2" width="700px">
+    </div>
+
+    <h3>CheckBox</h3>
+    <pre id="preh3">    CheckBox, kullanıcının evet veya hayır seçebileceği bir bileşendir.</pre>
+
+    <div id="divh3Img">
+        <img src="img/20.3.png" alt="20.3" width="700px">
+    </div>
+
+    <h3>ComboBox</h3>
+    <pre id="preh3">    ComboBox, birden fazla seçeneğin yazılabileceği bir liste sunar.</pre>
+
+    <div id="divh3Img">
+        <img src="img/20.4.png" alt="20.4" width="700px">
+    </div>
+
+    <h3>DateTimePicker</h3>
+    <pre id="preh3">    DateTimePicker, kullanıcının tarih ve saat seçebilmesini sağlar.</pre>
+
+    <div id="divh3Img">
+        <img src="img/20.5.png" alt="20.5" width="700px">
+    </div>
+
+    <h3>ListBox</h3>
+    <pre id="preh3">    ListBox, kullanıcının listedeki yazıları seçmesini sağlar.</pre>
+
+    <div id="divh3Img">
+        <img src="img/20.7.png" alt="20.7" width="700px">
+    </div>
+
+    <h3>NumericUpDown</h3>
+    <pre id="preh3">    NumericUpDown, sayıları artırıp azaltabilen bir bileşendir.</pre>
+
+    <div id="divh3Img">
+        <img src="img/20.8.png" alt="20.8" width="700px">
+    </div>
+
+    <h3>ProgressBar</h3>
+    <pre id="preh3">    ProgressBar, yüzdelik dilimi grafik olarak ifade eder.</pre>
+
+    <div id="divh3Img">
+        <img src="img/20.10.png" alt="20.10" width="700px">
+    </div>
+
+    <pre id="codeh3"><code class="language-csharp">X.Value = 10;</code></pre>
+
+    <h3>RadioButton</h3>
+    <pre id="preh3">    RadioButton, kullanıcının evet veya hayır seçebileceği bir bileşendir.</pre>
+
+    <div id="divh3Img">
+        <img src="img/20.11.png" alt="20.11" width="700px">
+    </div>
+
+    <h3>TextBox</h3>
+    <pre id="preh3">    TextBox, kullanıcının yazı girdisi girmesini sağlar.</pre>
+
+    <div id="divh3Img">
+        <img src="img/20.12.png" alt="20.12" width="700px">
+    </div>
+
+    <h3>FlowLayoutPanel</h3>
+    <pre id="preh3">    FlowLayoutPanel, bileşenleri bir panel içinde birbirini takip ederek sıralar.</pre>
+
+    <div id="divh3Img">
+        <img src="img/20.13.png" alt="20.13" width="700px">
+    </div>
+
+    <h3>GroupBox</h3>
+    <pre id="preh3">    GroupBox, ayrı bir panel halinde ve başlıklı bir şekilde bileşenleri gruplandırır.</pre>
+
+    <div id="divh3Img">
+        <img src="img/20.14.png" alt="20.14" width="700px">
+    </div>
+
+    <h3>Panel</h3>
+    <pre id="preh3">    Panel, küçük bir pencere gibi çalışır ve bileşenleri gruplandırmak için en iyi yöntemdir.</pre>
+
+    <div id="divh3Img">
+        <img src="img/20.15.png" alt="20.15" width="700px">
+    </div>
+
+    <h3>TabControl</h3>
+    <pre id="preh3">    TabControl, aynı bileşende birden fazla panelin bulunmasını sağlar.</pre>
+
+    <div id="divh3Img">
+        <img src="img/20.16.png" alt="20.16" width="700px">
+    </div>  
+
+    <h3>TableLayoutPanel</h3>
+    <pre id="preh3">    TableLayoutPanel, tablolu bir panel yapısı sağlar.</pre>
+
+    <div id="divh3Img">
+        <img src="img/20.17.png" alt="20.17" width="700px">
+    </div>
+
+    <h2>Kaynakça</h2>
+    <ul>
+        <li><a href="https://learn.microsoft.com/en-us/dotnet/desktop/winforms/?view=netframeworkdesktop-4.8" target="_blank" rel="noopener noreferrer">Microsoft Windows Forms Documentation</a></li>
+    </ul>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='19 C%23 Veritabanı İşlemleri.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='21 C%23 Quiz.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script src="../main.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>C# : Hata Yönetimi</title>
+</head>
+<body>
+    <h1>Hata Yönetimi</h1>
+
+    <h2>Hata Yönetimi Nedir?</h2>
+    <pre id="preh2">    Hata yönetimi, programlama dillerinde bir hata oluştuğunda programın otomatik olarak kapanmasını önler. Kodda potansiyel hata üretebilecek komutları kontrol ederek programın çökmeden devam etmesini sağlar. Genellikle veritabanı işlemleri, dosya işlemleri ve kullanıcı girdisi alma gibi durumlarda potansiyel hataları önler.</pre>
+
+    <h2>Try-Catch</h2>
+    <pre id="preh2">    Try-Catch, C# programlama dilinde hata yönetimini sağlayan bir yapıdır. <code>try</code> bloğu, potansiyel hatalı kodların yazıldığı kısım; <code>catch</code> bloğu ise hata oluştuğunda ve hatanın türüne bağlı olarak çalışan kodlardır. Hata çıkmazsa kod akışı devam eder.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">try
+{
+    // Potansiyel hata çıkarabilecek kodlar
+}
+catch (Exception e) // Hata türüne bağlı catch
+{
+    // Hata çıkarsa çalışacak kodlar
+}
+// İstenildiği kadar catch eklenebilir.</code></pre>
+
+    <pre id="preh2">    <code>catch</code> parantezlerindeki hata türü, hata mesajını da içerir. Bazı durumlarda kendi hata mesajlarımızı oluşturmamız gerekir. Bu durumlarda <code>throw</code> ile kendi hata mesajlarımızı oluştururuz.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">throw new Exception("Hata Mesajı");</code></pre>
+
+    <h2>Kaynakça</h2>
+    <ul>
+        <li><a href="https://learn.microsoft.com/tr-tr/dotnet/csharp/language-reference/statements/exception-handling-statements" target="_blank" rel="noopener noreferrer">C# Try-Catch ve Throw</a></li>
+    </ul>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='./10 C%23 Input Alma.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='./12 C%23 Paralel Programlama.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

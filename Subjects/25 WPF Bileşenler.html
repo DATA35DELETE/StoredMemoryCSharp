@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../main.css">
+    <script src="../main.js"></script>
+
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min..js"></script>
+    <script>
+        hljs.highlightAll();
+        hljs.initLineNumbersOnLoad();
+    </script>
+
+    <title>WPF : Bileşenler</title>
+
+</head>
+<body>
+    <h1>Bileşenler</h1>
+
+    <h2>Kontroller</h2>
+
+    <h3>Button</h3>
+    <pre id="preh3">    Button, kullanıcının etkileşime girebilceği bir yapıdır.</pre>
+
+    <pre id="codeh3"><code class="language-xaml">&lt;Button Content="Kaydet" Width="100" Height="40" Click="Button_Click"/>
+</code></pre>
+
+    <pre id="preh3">    Content, bileşenin eğer yazısı varsa içeriğini ayarlar.</pre>
+
+    <pre id="preh3">    Foreground, bileşenin yazı özelliği var ise yazısına renk verir.</pre>
+
+    <pre id="preh3">    Background, bileşenin arka plandaki rengini ayarlar.</pre>
+
+    <pre id="preh3">    FontSize, bileşenin yazı boyutunu ayarlar</pre>
+
+    <pre id="preh3">    Margin, bileşenin etrafına bir duvar gibi boşluk bırakır. "x,y,z,t" şeklindedir.</pre>
+
+    <pre id="preh3">    Padding, bileşenin etrafına duvar yerine kendisinden bir duvar örer. "x,y,z,t" formatındadır.</pre>
+
+    <pre id="preh3">    IsEnabled, bileşenin kullanabirliğini ayarlar.</pre>
+
+    <pre id="preh3">    Visibility, bileşenin görünürlüğünü ayarlar. "Hidden"; saklar, "Visible"; görünürlüğü açar.</pre>
+
+    <h3>CheckBox</h3>
+    <pre id="preh3">    CheckBox, kullanıcının onay kutusu olarak kullanabilceği bir bileşendir.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">private void Button_Click(object sender, RoutedEventArgs e)
+ {
+    if(checkBox.IsChecked == true)
+    {
+        MessageBox.Show("CheckBox seçilmiş");
+    }
+    else
+    {
+        MessageBox.Show("CheckBox seçilmemiş");
+    }
+ }</code>
+IsChecked ile CheckBox'sın seçilip seçilmediğine bakabiliriz.</pre>
+
+    <h3>ComboBox</h3>
+    <pre id="preh3">    ComboBox, birden fazla yazıyı seçebilceğimiz bir yapıdır.</pre>
+
+    <pre id="codeh3"><code class="language-xml">&lt;ComboBox Width="200" Height="30">
+    &lt;ComboBoxItem Content="Kırmızı" />
+    &lt;ComboBoxItem Content="Yeşil" />
+    &lt;ComboBoxItem Content="Mavi" />
+&lt;/ComboBox></code>
+    Bu kod, ComboBox oluşturur ve içine üç adet item koyar. X.Text ile mevcut yazıya erişebilinir.</pre>
+
+    <pre id="preh3">    IsEditabled ile de özel Item'ler konulabilir.</pre>
+
+    <h3>DataPicker</h3>
+    <pre id="preh3">    DataPicker, tarih seçimini sağlar.</pre>
+
+    <div id="divh3Img">
+        <img src="img/25.3.png" alt="25.3" width="700px">
+    </div>
+
+    <h3>Label</h3>
+    <pre id="preh3">    Label, sadece yazıyı göstermek içi kullanılan bir bileşelerdir.</pre>
+
+    <h3>ListBox</h3>
+    <pre id="preh3">    ListBox, liste şekilinde verileri görüntülemeyi sağlar. ListBoxItem ile de veriler eklenir.</pre>
+
+    <pre id="codeh3"><code class="language-xml">&lt;ListBox Width="200" Height="120">
+    &lt;ListBoxItem Content="Kırmızı" />
+    &lt;ListBoxItem Content="Yeşil" />
+    &lt;ListBoxItem Content="Mavi" />
+&lt;/ListBox></code></pre>
+
+    <h3>PasswordBox</h3>
+    <pre id="preh3">    PasswordBox, şifreli bir metin yazma kutucuğudur.</pre>
+
+    <pre id="codeh3"><code class="language-xml">&lt;PasswordBox Canvas.Left="235" Canvas.Top="143" Width="120"/>
+</code></pre>
+
+    <h3>ProgressBar</h3>
+    <pre id="preh3">    ProgressBar, bir işlemin görsel olarak hangi durumda olduğunu belirtir.</pre>
+
+    <pre id="codeh3"><code class="language-xml">&lt;ProgressBar Height="53" Canvas.Left="79" Canvas.Top="40" Width="289" Value="10"/></code></pre>
+
+    <h3>RadioButton</h3>
+    <pre id="preh3">    RadioButton, yuvarlak bir onay kutusu oluşturur. CheckBox ile neredeyse aynıdır.</pre>
+
+    <pre id="codeh3"><code class="language-xml">&lt;RadioButton Content="RadioButton" Canvas.Left="208" Canvas.Top="95"/>
+</code></pre>
+
+    <h3>Slider</h3>
+    <pre id="preh3">    Slider, kaydırıcı olarak görev görür.</pre>
+
+    <pre id="codeh3"><code class="language-xml">&lt;Slider Canvas.Left="147" Canvas.Top="54" Width="120" Value="5"/>
+</code></pre>
+
+    <h3>TabControl</h3>
+    <pre id="preh3">    TabControl, sekme sekme bir yapılıdır.</pre>
+
+    <pre id="codeh3"><code class="language-xml">&lt;TabControl Height="484" Width="500">
+    &lt;TabItem Header="TabItem">
+        &lt;Grid Background="#FFE5E5E5"/>
+    &lt;/TabItem>
+    &lt;TabItem Header="TabItem">
+        &lt;Grid Background="#FFE5E5E5"/>
+    &lt;/TabItem>
+&lt;/TabControl></code></pre>
+
+    <h3>TextBox</h3>
+    <pre id="preh3">    TextBox, kullanıcının yazı yazabilceği bir kutu sağlar.</pre>
+
+    <pre id="codeh3"><code class="language-xml">&lt;TextBox Canvas.Left="90" TextWrapping="Wrap" Text="TextBox" Canvas.Top="210" Width="120"/>
+</code></pre>
+
+    <pre id="preh3">    TextWrapping, TextBox'sın yazıları kutucuğu aştığı zaman bir satır kaydırır.</pre>
+
+    <h2>Koyteynırlar</h2>
+
+    <h3>Grid</h3>
+    <pre id="preh3">    Grid, satır ve sütün şeklinde düzenlenmesinde kullanılır.</pre>
+
+    <pre id="codeh3"><code class="language-xml">&lt;Grid>
+    &lt;!--Grid'in içindeki bileşenler-->
+&lt;/Grid></code></pre>
+
+    <pre id="preh3">    RowDefinitions ve ColumnDefinitions ilede satırlara ve sütünlara bölebiliriz. Bu satırlara ve sütünlara Width ve Height verilerek, satırların ve sütünların boyutlandırılması yapılır.</pre>
+
+    <pre id="preh3">    Eğer bir bileşen, Row veya Column'lardan oluşan bölüme konulacaksa Grid.Row ve Grid.Column özniteliklerini belirlenmelidir. Aksi takdirde sıfıra sıfır konumunda bulunan bölüme gider. Ayrıca bölümler yukarıdan ve soldan sağ doğru Index numarlarıyla temsil edilir.</pre>
+
+    <pre id="codeh3"><code class="language-xml">&lt;Grid>
+    &lt;Grid.RowDefinitions>
+        &lt;RowDefinition/>
+        &lt;RowDefinition/>
+    &lt;/Grid.RowDefinitions>
+    &lt;Grid.ColumnDefinitions>
+        &lt;ColumnDefinition/>
+        &lt;ColumnDefinition/>
+    &lt;/Grid.ColumnDefinitions>
+
+    &lt;Border Background="Red"/>
+    &lt;Border Background="Red" Grid.Column="1" Grid.Row="1"/>
+&lt;/Grid></code>
+    Bu kod, pencereyi 4 adet eş parçaya böler. Sıfırıncı satır ve sıfırıncı sütündaki, birinci satır ve birinci sütündaki bölmeyi kırmızı yapar.</pre>
+
+    <h3>StackPanel</h3>
+    <pre id="preh3">    StackPanel, sıra sıra bileşenleri düzenliyen bir koyteynırdır</pre>
+
+    <pre id="codeh3"><code class="language-xml">&lt;StackPanel>
+    &lt;!--Bileşenler-->
+&lt;/StackPanel></code></pre>
+
+    <pre id="preh3">    Özniteliklerinden biri olan Orientation, bileşen sıralama yönünü belirler. "Horizontal"; Yukarıdan aşşağı, "Vertical"; Soldan sağ.</pre>
+
+    <pre id="codeh3"><code class="language-xml">&lt;StackPanel Background="#DDD" Width="150">
+    &lt;TextBlock Text="Menü" FontWeight="Bold" Margin="0,0,0,10"/>
+    &lt;Button Content="Ana Sayfa" Margin="0,5,0,0"/>
+    &lt;Button Content="Ayarlar" Margin="0,5,0,0"/>
+    &lt;Button Content="Çıkış" Margin="0,5,0,0"/>
+&lt;/StackPanel></code>
+    Bu kod basit bir buton yapısını gösterir.</pre>
+
+    <h3>DockPanel</h3>
+    <pre id="preh3">    DockPanel; koyteynırı üst, sağ, sol, merkez ve alt olmak üzere 5 parçaya böler. Her bileşen yerleşeceği kısımın ismini yazarak yerleşir. Örn: <code class="language-xml">DockPanel.Dock="Top"</code></pre>
+
+    <div id="divh3Img">
+        <img src="img/25.1..png" alt="25.1" width="400px">
+    </div>
+
+    <h3>Canvas</h3>
+    <pre id="preh3">    Canvas, herhangi bir düzenleme olmadan sadece ama sadece alan sağlayan bir koyteynırdır.</pre>
+
+    <pre id="preh3">    Konumlandırması ise Canvas.Left, Canvas.Right, Canvas.Top ve Canvas.Bottom ile konumlandırma yapılır.</pre>
+
+    <h3>WrapPanel</h3>
+    <pre id="preh3">    WrapPanel, bileşenleri sırayla sıralar eğer satırın sonuna gelinirse bir alt satıra iner.</pre>
+
+    <pre id="codeh3"><code class="language-xml">&lt;WrapPanel>
+    &lt;Button Content="1" Width="60" Height="30"/>
+    &lt;Button Content="2" Width="60" Height="30"/>
+    &lt;Button Content="3" Width="60" Height="30"/>
+    &lt;Button Content="4" Width="60" Height="30"/>
+    &lt;Button Content="5" Width="60" Height="30"/>
+&lt;/WrapPanel></code></pre>
+
+    <h2>Kaynakça</h2>
+    <ul>
+        <li><a href="https://www.example.com" target="_blank" rel="noopener noreferrer">Example Kaynak 1</a></li>
+    </ul>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a href="./24 WPF XAML.html" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a href="./26 WPF Data Binding.html" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork'dur.</p>
+        </div>
+
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

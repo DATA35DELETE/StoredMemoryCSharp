@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script src="../main.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>C# : Veri</title>
+</head>
+<body>
+    <h1>Veri</h1>
+
+    <h2>Veri Nedir?</h2>
+    <pre id="preh2">    Veri, programlamada bilgileri geçici olarak RAM’de, kalıcı olarak SSD/HDD’de saklanan yapılardır. Diğer adı değişkenlerdir.</pre>
+
+    <pre id="preh2">    Verilerin önemi, örneğin, bir hesap giriş-çıkış sisteminde kullanıcıdan isim alınır. Programda kullanıcının girdiği isim, değişkene kaydedilerek ihtiyaç durumunda çağrılır. Eğer böyle bir yapı olmazsa, programda sürekli kullanıcı ismini girmek zorunda kalınırdı.</pre>
+
+    <h3>Yapısı</h3>
+    <pre id="codeh3"><code>erişimBelirteci sabitlikTürü veriTürü veriAdı = değeri;</code></pre>
+    
+    <h2>Sayısal Veri Türleri</h2>
+
+    <h3>sByte</h3>
+    <pre id="preh3">    sByte, C# programlama dilinde en küçük aralığa sahip sayı türüdür. -128 ila 127 sayılarının aralığında değer alabilir.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">sbyte sekizBitlikBirDeğer = 8;</code></pre>
+
+    <h3>Short</h3>
+    <pre id="preh3">    Short, sByte türünden daha büyük bir sayı aralığına sahiptir. -32,768 ila 32,767 sayılarının aralığında değer alabilir.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">short onAltıBitlikDeğer = -1000;</code></pre>
+
+    <h3>Integer</h3>
+    <pre id="preh3">    Integer (int), C# programlama dilinde en çok kullanılan sayı türüdür. -2,147,483,648 ila 2,147,483,647 sayılarının aralığında değer alabilir.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">int otuzİkiBitlikDeğer = 2000000;</code></pre>
+
+    <h3>Long</h3>
+    <pre id="preh3">    Long, Integer sayı veri türünün yetersiz kaldığı zamanlarda kullanılan sayı türüdür. -9,223,372,036,854,775,808 ila 9,223,372,036,854,775,807 sayılarının aralığında değer alabilir.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">long altmışDörtBitlikDeğer = 9000000000;</code></pre>
+
+    <h3>Float</h3>
+    <pre id="preh3">    Float, ondalıklı sayılar için kullanılan veri türüdür. Yaklaşık olarak 7 basamağa kadar hassasiyet sağlar. 32 bitlik bir veri türüdür.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">float ondalikliSayi = 5.75f;</code></pre>
+    <pre id="preh3">    Float veri türünde ondalıklı sayılar tanımlarken, sayının sonuna ‘f’ harfi eklenmelidir. Aksi takdirde derleyici hata verecektir.</pre>
+
+    <h3>Double</h3>
+    <pre id="preh3">    Double, Float veri türünden daha hassas ondalıklı sayılar için kullanılan veri türüdür. Yaklaşık olarak 15-16 basamağa kadar hassasiyet sağlar. 64 bitlik bir veri türüdür.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">double dahaHassasOndalikliSayi = 19.99d;</code></pre>
+    <pre id="preh3">    Double veri türünde ondalıklı sayılar tanımlarken, sayının sonuna ‘d’ harfi eklenmelidir. Aksi takdirde derleyici hata verecektir.</pre>
+
+    <h3>Decimal</h3>
+    <pre id="preh3">    Decimal, Double veri türünden daha hassas ondalıklı sayılar için kullanılan veri türüdür. Yaklaşık olarak 28-29 basamağa kadar hassasiyet sağlar. 128 bitlik bir veri türüdür.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">decimal enHassasOndalikliSayi = 199.99m;</code></pre>
+    <pre id="preh3">    Decimal veri türünde ondalıklı sayılar tanımlarken, sayının sonuna ‘m’ harfi eklenmelidir. Aksi takdirde derleyici hata verecektir.</pre>
+
+    <h2>Yazısal Veri Türleri</h2>
+
+    <h3>Char</h3>
+    <pre id="preh3">    Char, tek bir karakteri saklamak için kullanılan veri türüdür. Tek tırnak işaretleri (‘ ’) arasında tanımlanır veya ASCII tablosundaki ondalıklı sayıların değerine tekabül eden karakteri tutar. 16 bitlik bir veri türüdür.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">char büyükAHarfi = 'A';
+büyükAHarfi = 65; // ASCII tablosunda A harfinin sayısal karşılığı 65’tir.</code></pre>
+
+    <h3>String</h3>
+    <pre id="preh3">    String, birden fazla karakteri saklamak için kullanılan veri türüdür. Çift tırnak işaretleri (“ ”) arasında tanımlanır. 16 bitlik karakterlerden oluşan bir dizi (array) yapısıdır.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">string metin = "Merhaba Dünya";</code></pre>
+
+    <h2>Boolean Veri Türü</h2>
+    <pre id="preh2">    Boolean, programlama dillerinde True veya False değerlerini alabilen 1 bitlik veri türüdür.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">bool dogruMu = true;
+bool yanlisMi = false;</code></pre>
+
+    <h2>Null</h2>
+    <pre id="preh2">    İstisnalar hariç, C#’ta referans türleri null değerini alabilir. Null, boş veya yok anlamına gelen bir kelimedir.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">string metin = null;</code></pre>
+
+    <pre id="preh2">    Null’un faydası: Değeri henüz belli olmayan referans türleri için null kullanılır. Eğer değişkenin değeri tanımlanmazsa program hata verebilir. Null sayesinde bu sorun ortadan kaldırılır.</pre>
+
+    <pre id="preh2">    Zararı ise, null olan bir değişkenle işlem yapılmaya çalışılırsa NullReferenceException hatası alınır. Sebebi: Null boşluk olduğu için, herhangi bir işlemde kullanılamaz ve program orada kendini durdurur.</pre>
+
+    <h2>Erişim Belirteçleri</h2>
+
+    <h3>Public</h3>
+    <pre id="preh3">    Public, C# programlama dilinde yapıları veya değişkenleri, diğer sınıfların veya fonksiyonların o veriye ulaşabilmesini sağlayan bir erişim belirtecidir.</pre>
+    
+    <pre id="codeh3"><code class="language-csharp">public int herkeseAçıkSayı = 1881;</code></pre>
+
+    <h3>Protected</h3>
+    <pre id="preh3">    Protected, sadece içerisinde bulunduğu sınıfa ve ondan kalıtılmış sınıflara erişilebilirlik sağlar.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">protected string diğerSınıflarcaKorunmuş = "Doğum Yılı";</code></pre>
+
+    <h3>Private</h3>
+    <pre id="preh3">    Private, C#’ta sadece tanımlandığı sınıf içerisinde kullanım erişimi sağlar.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">private string özelŞifre = "ruhi123";</code></pre>
+
+    <h3>Erişim Belirteçleri Tablosu</h3>
+
+    <table id="tableh3" border="1">
+        <thead>
+            <tr>
+                <th>Erişim Belirteci</th>
+                <th>Tanım</th>
+                <th>Erişim Alanı</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Public</td>
+                <td>Herkese Açık</td>
+                <td>Her yerden erişilebilir.</td>
+            </tr>
+            <tr>
+                <td>Protected</td>
+                <td>Korumalı</td>
+                <td>Sadece tanımlandığı sınıf ve ondan kalıtılmış sınıflardan erişilebilir.</td>
+            </tr>
+            <tr>
+                <td>Private</td>
+                <td>Özel</td>
+                <td>Sadece tanımlandığı sınıf içerisinden erişilebilir.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2>Sabitlik</h2>
+
+    <h3>Const</h3>
+    <pre id="preh3">    Const, C# programlama dilinde verileri sabit değerle tanımlamayı sağlar. Ardından tanımlanan değişkenin değeri bir daha asla değiştirilemez.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">const string buÜlkeninKurucusu = "Mustafa Kemal Atatürk";</code></pre>
+
+    <h2>Verileri Birbirlerine Dönüştürme</h2>
+    <pre id="preh2">    Verileri birbirine dönüştürme, elimizdeki tür ihtiyaç duyulan türden farklı olduğunda gerekir. Bu yüzden <code>Convert</code> ile veriler dönüştürülür.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">string sayi = "1000";
+int sayiInt = Convert.ToInt32(sayi); // string türündeki sayi
+// değişkeni int türüne dönüştürülüp sayiInt değişkenine atandı.</code></pre>
+
+    <h2>Kaynakça</h2>
+    <ul>
+        <li><a href="https://kodlamavakti.com/csharp/sayisal-veri-tipleri" target="_blank" rel="noopener noreferrer">C# Sayısal Veri Türleri</a></li>
+        <li><a href="https://kodlamavakti.com/csharp/metinsel-veri-tipleri">C# Yazısal Veri Türleri</a></li>
+        <li><a href="https://tr.wikipedia.org/wiki/ASCII">ASCII</a></li>
+        <li><a href="https://learn.microsoft.com/tr-tr/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers">C#’taki Erişim Belirteçleri</a></li>
+        <li><a href="https://learn.microsoft.com/tr-tr/dotnet/csharp/programming-guide/classes-and-structs/constants">C# Const</a></li>
+        <li><a href="https://www.youtube.com/watch?v=-6lu9IHqlUA&list=PLEcJSEQK_cD75mzGvnEkyZJoPiCl4bxJt&index=13">C# Verileri Birbirine Dönüştürme</a></li>
+    </ul>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='4 C%23 IDE Kurulumu.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='6 C%23 Operatörler.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

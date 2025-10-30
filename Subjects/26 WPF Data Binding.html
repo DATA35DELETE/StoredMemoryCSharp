@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../main.css">
+    <script src="../main.js"></script>
+
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min..js"></script>
+    <script>
+        hljs.highlightAll();
+        hljs.initLineNumbersOnLoad();
+    </script>
+
+    <title>WPF : Data Binding</title>
+
+</head>
+<body>
+    <h1>Data Binding</h1>
+
+    <h2>Data Binding Nedir?</h2>
+    <pre id="preh3">    Data Binding türkçesiyle veri bağlama, GUI bileşenlerinin, Backend kısmında direk veriye bağlamamızı sağlayan çok önemli bir yöntemdir. WPF'in en olduğu kısım budur.</pre>
+
+    <h2>Modları</h2>
+    <pre id="preh2">    Data Binding birden fazla modları vardır. Her biri farklı durumlarda kullanılır.</pre>
+
+    <h3>OneTime</h3>
+    <pre id="preh3">    OneTime, bileşene bir kere verisini taşır.</pre>
+
+    <pre id="codeh3"><code class="language-xml">&lt;Grid>
+    &lt;TextBlock Text="{Binding KullaniciAdi}" 
+                FontSize="20" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"/>
+&lt;/Grid></code>
+    XAML tarafında bir Grid'in içine TextBox yerleştirdik. Şimdi onu Backen d'e kodlara bağlıyalım.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">namespace storedMemoryWPF
+{
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+            this.DataContext = new KullaniciViewModel();
+        }
+
+        public class KullaniciViewModel
+        {
+            public string KullaniciAdi { get; set; } = "Stored Memory C#";
+        }
+    }
+}</code></pre>
+
+    <h3>TwoWay</h3>
+    <pre id="preh3">    TwoWay, hem veri değiştiğinde hemde GUI'daki veri değiştiğinde güncellenir.</pre>
+
+    <pre id="codeh3"><code class="language-xml">&lt;StackPanel Margin="20">
+        &lt;TextBox Text="{Binding KullaniciAdi, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                 FontSize="16" Margin="0,0,0,10"/>
+        &lt;TextBlock Text="{Binding KullaniciAdi}" FontSize="18" Foreground="RoyalBlue"/>
+    &lt;/StackPanel></code></pre>
+
+    <pre id="preh3">    C#:</pre>
+
+    <pre id="codeh3"><code class="language-csharp">public partial class MainWindow : Window
+{
+    public MainWindow()
+    {
+        InitializeComponent();
+        this.DataContext = new KullaniciViewModel(); // {Binding KullaniciAdi} diyebilmemiz için önemli
+    }
+}
+
+public class KullaniciViewModel : INotifyPropertyChanged // Data Binding için Class
+{
+    private string _kullaniciAdi = "Data Delete"; // Ana veri
+    public string KullaniciAdi // Değişken veri
+    {
+        get => _kullaniciAdi; // Bileşen bunu okur
+        set
+        {
+            _kullaniciAdi = value; // Değeri günceller
+            OnPropertyChanged(nameof(KullaniciAdi)); // Değiştiğini bileşene haber gider.
+        }
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+    protected void OnPropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}</code></pre>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a href="./25 WPF Bileşenler.html" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a href="./27 WPF Stiller.html" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork'dur.</p>
+        </div>
+
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

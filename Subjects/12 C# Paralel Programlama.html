@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script src="../main.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>C# : Paralel Programlama</title>
+</head>
+<body>
+    <h1>Paralel Programlama</h1>
+
+    <h2>Paralel Programlama Nedir?</h2>
+    <pre id="preh2">    Paralel programlama, işlemcilerin her çekirdeğinde farklı işlemleri gerçekleştirebilmek için kullanılan yöntemdir.</pre>
+
+    <pre id="preh2">    Örneğin, bir pencere oluşturulurken programa ayrılan çekirdek bu işi yaparken, aynı anda veritabanında işlem yapamaz. Çünkü bilgisayarlarda her program için ayrı işlemci çekirdekleri tahsis edilir. Bazı durumlarda işlemlerimiz için tahsis edilen çekirdekler yetersiz kalır. Bu yüzden paralel programlama ile işlemciden yeni bir çekirdek tahsis edilir.</pre>
+
+    <h2>Task ve Async/Await</h2>
+    <pre id="preh2">    Task, C# programlama dilinde modern bir paralel programlama sınıfıdır. Task ile fonksiyonlar paralel programlamaya uygun hale getirilir, aksi takdirde hata oluşabilir.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">namespace storedMemoryCSharp
+{
+    internal class Program
+    {
+        static async Task Main(string[] args)
+        {
+            // Kodlar
+        }
+    }
+}</code>
+    Böylece <code style="overflow-x: visible; background-color: transparent; padding: 0; display: inline-block;">Main</code> fonksiyonu paralel programlamaya hazır hale gelir. Aynı zamanda <code style="overflow-x: visible; background-color: transparent; padding: 0; display: inline-block;">async</code> ile farklı çekirdekte çalışacağı belirtilir.</pre>
+
+    <h3>Await</h3>
+    <pre id="preh3">    <code>await</code>, Task’ta bir işlemin tamamlanmasını bekleyen anahtar kelimedir. <code>await</code>, program akışını belirtilen işlem tamamlanana kadar durdurur. İşlem tamamlandığında program akışı devam eder.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">namespace storedMemoryCSharp
+{
+    internal class Program
+    {
+        static async Task Main(string[] args)
+        {
+            Console.WriteLine("Başlıyoruz...");
+            await UzunSurenIslem();
+            Console.WriteLine("Bitti!");
+        }
+        static async Task UzunSurenIslem()
+        {
+            Console.WriteLine("Uzun süren işlem başladı.");
+            await Task.Delay(2000); // 2 saniye bekler (simüle edilmiş uzun işlem)
+            Console.WriteLine("Uzun süren işlem tamamlandı.");
+        }
+    }
+}</code>
+    <code style="overflow-x: visible; background-color: transparent; padding: 0; display: inline-block;">Task.Delay()</code> ile program belirtilen milisaniye kadar bekletilir.</pre>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='./11 C%23 Hata Yönetimi.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='./13 C%23 Quiz.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

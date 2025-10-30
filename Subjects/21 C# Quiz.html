@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <script src="../main.js"></script>
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>C# : Quiz</title>
+    <style>
+        button {
+            cursor: pointer;
+            border: none;
+            color: whitesmoke;
+            background-color: #555;
+            font-family: sans-serif;
+            font-size: 1.2rem;
+            padding: 10px;
+            border-radius: 10px;
+            overflow: visible;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .sIklI {
+            display: inline-block;
+            code {
+                overflow-x: visible;
+                background-color: transparent;
+                padding: 0;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz</h1>
+
+    <pre>    Fonksiyonların yapısı nasıldır?</pre>
+
+    <button id="false">A</button> <pre class="sIklI">static geriDönüşTürü fonksiyonİsmi(parametreler) { Kodlar }</pre><br>
+    <button id="false">B</button> <pre class="sIklI">erişimBelirteci static fonksiyonİsmi(parametreler) { Kodlar }</pre><br>
+    <button id="true">C</button> <pre class="sIklI">erişimBelirteci static geriDönüşTürü fonksiyonİsmi(parametreler) { Kodlar }</pre><br>
+    <button id="false">D</button> <pre class="sIklI">erişimBelirteci geriDönüşTürü fonksiyonİsmi() { Kodlar }</pre><br>
+
+    <br><br>
+
+    <pre><code>namespace SMCS
+{
+    internal class Program
+    {
+        public static void yazdir(string yazi)
+        {
+            Console.WriteLine(yazi);
+        }
+
+        public static void Main(string[] args)
+        {
+            yazdir("Hello World");
+        }
+    }
+}</code></pre>
+
+    <pre>    Kodun çıktısı ne olur?</pre>
+
+    <button id="false">A</button> <pre class="sIklI">"Hello World"</pre><br>
+    <button id="false">B</button> <pre class="sIklI">Helo Word</pre><br>
+    <button id="false">C</button> <pre class="sIklI">World Hello</pre><br>
+    <button id="true">D</button> <pre class="sIklI">Hello World</pre><br>
+
+    <br><br>
+
+    <pre>    Sınıfların amacı nedir?</pre>
+
+    <button id="true">A</button> <pre class="sIklI">Sınıflar, verileri ve fonksiyonları gruplandırmamızı sağlar.</pre><br>
+    <button id="false">B</button> <pre class="sIklI">Projemize paket dahil etmemizi sağlar.</pre><br>
+    <button id="false">C</button> <pre class="sIklI">OOP’nin en önemli prensibidir.</pre><br>
+    <button id="false">D</button> <pre class="sIklI">Tırnaklar içinde ifade yazmamızı sağlar.</pre><br>
+
+    <br><br>
+
+    <pre><code>public static void Main(string[] args)
+{
+    Console.Write(selamVer());
+    Console.WriteLine(selamVer("Data"));
+}
+ 
+public static string selamVer()
+{
+    return "Selam ";
+}
+public static string selamVer(string name)
+{
+    return "Selam, "+name;
+}</code></pre>
+
+    <pre>    Yukarıdaki kodun çıktısı ne olur?</pre>
+
+    <button id="false">A</button> <pre class="sIklI">Selam, DataSelam</pre><br>
+    <button id="true">B</button> <pre class="sIklI">Selam Selam, Data</pre><br>
+    <button id="false">C</button> <pre class="sIklI">Data</pre><br>
+    <button id="false">D</button> <pre class="sIklI">Selam</pre><br>
+
+    <br><br>
+
+    <pre>    File C# programlama dilinde <button id="false">proje</button> / <button id="true">dosya</button> oluşturmamızı sağlayan sınıftır.</pre>
+
+    <pre>    StreamWriter <code style="overflow-x: visible; background-color: transparent; padding: 0; display: inline-block;">True</code> ile açılırsa dosyalara veri <button id="false">silip</button> / <button id="true">ekleyerek</button> yazar.</pre>
+
+    <pre>    BinaryReader, <button id="true">bit bit</button> / <button id="false">ASCII kodu</button> okuyarak dosyalarımızı düşük seviyede işler.</pre>
+
+    <br><br><br>
+
+    <pre>    Eğitimde biz MariaDB ve HeidiSQL kullandık</pre>
+    <button id="true">Doğru</button>
+    <button id="false">Yanlış</button>
+
+    <br><br><br>
+
+    <pre>    C#’ta MySqlConnection, bağlantı için sunucunun değerlerini içeren bir string veri türü ister.</pre>
+    <button id="true">Doğru</button>
+    <button id="false">Yanlış</button>
+
+    <br><br><br>
+
+    <pre>    Özellikler penceresi, bileşenlerimizin özelliklerine (örneğin Text, Size, Location) erişebileceğimiz penceredir.</pre>
+    <button id="true">Doğru</button>
+    <button id="false">Yanlış</button>
+
+    <br><br><br>
+
+    <pre>    BackColor, bileşenin arka plan rengini değiştirir.</pre>
+    <button id="true">Doğru</button>
+    <button id="false">Yanlış</button>
+
+    <br><br><br>
+
+    <pre>    Visible, bileşenin görünürlüğünü açıp kapatan bir özelliktir.</pre>
+    <button id="true">Doğru</button>
+    <button id="false">Yanlış</button>
+
+    <br><br><br>
+
+    <pre>    Location, Point sınıfını kullanır</pre>
+    <button id="true">Doğru</button>
+    <button id="false">Yanlış</button>
+
+    <br><br><br>
+
+    <div id="divh2Img">
+        <img src="img/20.2.png" alt="20.2" width="700px">
+    </div>
+
+    <pre>    Yukarıdaki bileşenin adı CheckBox’tır.</pre>
+    <button id="false">Doğru</button>
+    <button id="true">Yanlış</button>
+
+    <br><br><br>
+
+    <pre>    ProgressBar’ın dolum değerine Value özelliği ile erişiriz.</pre>
+    <button id="true">Doğru</button>
+    <button id="false">Yanlış</button>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='20 C%23 Pencere Sistemi.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='22 C%23 Proje.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const trueFalse = document.querySelectorAll("button[id]");
+        trueFalse.forEach(button => {
+            button.addEventListener("click", () => {
+                if (button.id === "true") {
+                    button.style.backgroundColor = "#4CAF50";
+                } else {
+                    button.style.backgroundColor = "#f44336";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

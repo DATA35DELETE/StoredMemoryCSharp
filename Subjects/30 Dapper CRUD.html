@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../main.css">
+    <script src="../main.js"></script>
+
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min..js"></script>
+    <script>
+        hljs.highlightAll();
+        hljs.initLineNumbersOnLoad();
+    </script>
+
+    <title>Dapper : CRUD</title>
+
+</head>
+<body>
+    <h1>CRUD</h1>
+    
+    <h2>CRUD Nedir?</h2>
+    <pre id="preh2">    CRUD, vertabanı işlemlerinde Create, Read, Update, Delete kelimelerin baş harfleridir. Bunlar veritabanlardaki işlemleri temsil eder.</pre>
+
+    <h2>Create</h2>
+    
+    <h3>Veritabanı Oluşturma</h3>
+    <pre id="preh3">    Veritabanı oluşturmak için ise;</pre>
+
+    <pre id="codeh3"><code class="language-sql">CREATE DATABASE exmapledb; -- exampledb isimli veritabanı oluştur</code>
+    Kullanılır.</pre>
+
+    <h3>Tablo Oluşturma</h3>
+    <pre id="preh3">    Dapper, SQL dilini kullanır. Yani sorgumuzu SQL dilinde yazmalı ve çalıştırmalıyız. Şimdilik hangi sorgular ne işe yarıyor onu görelim.</pre>
+
+    <pre id="codeh3"><code class="language-sql">CREATE TABLE exampletable (
+    id INT AUTO_INCREMENT PRIMARY KEY, -- ID
+    name VARCHAR(100), -- name isimli string türünde değişken
+    age INT -- age isim
+);</code></pre>
+    
+    <h3>Veri Ekleme</h3>
+    <pre id="preh3">    Tablolara veri eklemek için;</pre>
+
+    <pre id="codeh3"><code class="language-sql">INSERT INTO exampletable (X, Y) VALUES
+('x', y),
+('x', y),
+('x', y);</code></pre>
+
+    <h2>Read (Select)</h2>
+
+    <h3>Veritabanı Okuma</h3>
+    <pre id="preh3">    SHOW, ile veritabanlarını görüntüleriz. Görüntülenen veritabanlarını konsolda yazdıralım sırayla.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">string connectionString = "Server=localhost;Database=testdb;User ID=root;Password=1234;";
+
+using var connection = new MySqlConnection(connectionString);
+connection.Open();
+
+var data = connection.Query("SHOW DATABASES;");
+
+foreach (var dt in data)
+{
+    Console.WriteLine($"Veritabanı: {dt.db}");
+}
+
+public class data
+{
+    public int Id { get; set; }
+}</code></pre>
+
+    <h3>Tablo Okuma</h3>
+    <pre id="preh3">    Veritabanlarındaki işlemlerinin aynısını bur kısımda geçerlidir.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">string connectionString = "Server=localhost;Database=testdb;User ID=root;Password=1234;";
+
+using var connection = new MySqlConnection(connectionString);
+connection.Open();
+
+var data = connection.Query("USE exampledb"
+                            + "SHOW TABLE");
+foreach (var tb in data)
+{
+    Console.WriteLine($"Veritabanı: {tb.Value}");
+}
+
+public class data
+{
+    public int Value { get; set; }
+}</code></pre>
+
+    <h3>Veri Okuma</h3>
+    <pre id="preh3">    Veritabanlarındaki veriler tablolarda saklanır. Bunun için SELECT kullınılır.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">string connectionString = "Server=localhost;Database=testdb;User ID=root;Password=1234;";
+
+using var connection = new MySqlConnection(connectionString);
+connection.Open();
+
+var data = connection.Query("USE exampledb"
+                            + "SELECT X, Y, Z FROM ecampletable");
+foreach (var data in result)
+{
+    Console.WriteLine($"Veritabanı: {tb.Value}");
+}
+
+public class data
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+}</code></pre>
+
+    <h2>Güncelleme</h2>
+
+    <h3>Veri Güncelleme</h3>
+    <pre id="codeh3"><code class="language-csharp">using System;
+using Dapper;
+using MySql.Data.MySqlClient;
+
+namespace storedMemoryCSharp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string connectionString = "Server=localhost;Database=testdb;User ID=root;Password=;";
+
+            using var connection = new MySqlConnection(connectionString);
+            connection.Open();
+            Console.WriteLine("✅ Bağlantı başarılı!");
+
+            // Güncelleme sorgusu
+            string updateQuery = "UPDATE users SET name = @name, email = @mail WHERE id = @id";
+
+            // Parametreleri belirliyoruz
+            var parameters = new
+            {
+                id = 1, // Güncellenecek kullanıcının ID'si
+                name = "Ahmet Yılmaz",
+                mail = "ahmetyilmaz@mail.com"
+            };
+
+            // UPDATE işlemini çalıştırıyoruz
+            int affectedRows = connection.Execute(updateQuery, parameters);
+
+            Console.WriteLine($"🔁 Güncellenen satır sayısı: {affectedRows}");
+        }
+    }
+}</code></pre>
+
+    <h2>Silme</h2>
+
+    <h3>Veritabanı Silme</h3>
+    <pre id="codeh3"><code class="language-csharp">using System;
+using Dapper;
+using MySql.Data.MySqlClient;
+
+namespace storedMemoryCSharp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Burada "master" gibi bir yönetim veritabanına bağlanıyoruz
+            string connectionString = "Server=localhost;User ID=root;Password=;";
+
+            using var connection = new MySqlConnection(connectionString);
+            connection.Open();
+            Console.WriteLine("✅ MariaDB bağlantısı başarılı!");
+
+            // Silinecek veritabanı adı
+            string dbName = "testdb";
+
+            // Veritabanını silme komutu
+            string dropDbQuery = $"DROP DATABASE IF EXISTS {dbName}";
+
+            int result = connection.Execute(dropDbQuery);
+
+            Console.WriteLine($"💥 '{dbName}' veritabanı silindi (varsa).");
+        }
+    }
+}
+</code></pre>
+
+    <h3>Tablo Silme</h3>
+    <pre id="codeh3"><code class="language-csharp">using System;
+using Dapper;
+using MySql.Data.MySqlClient;
+
+namespace storedMemoryCSharp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string connectionString = "Server=localhost;Database=testdb;User ID=root;Password=;";
+
+            using var connection = new MySqlConnection(connectionString);
+            connection.Open();
+            Console.WriteLine("✅ Veritabanına bağlanıldı.");
+
+            // Silinecek tablo adı
+            string tableName = "users";
+
+            // Tabloyu silme sorgusu
+            string dropTableQuery = $"DROP TABLE IF EXISTS {tableName}";
+
+            int result = connection.Execute(dropTableQuery);
+
+            Console.WriteLine($"🗑️ '{tableName}' tablosu silindi (varsa).");
+        }
+    }
+}</code></pre>
+
+    <h3>Veri Silme</h3>
+    <pre id="codeh3"><code class="language-csharp">using System;
+using Dapper;
+using MySql.Data.MySqlClient;
+
+namespace storedMemoryCSharp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string connectionString = "Server=localhost;Database=testdb;User ID=root;Password=;";
+
+            using var connection = new MySqlConnection(connectionString);
+            connection.Open();
+            Console.WriteLine("✅ MariaDB bağlantısı başarılı!");
+
+            // Silinecek kaydın ID’sini belirliyoruz
+            int deleteId = 2;
+
+            // DELETE sorgusu
+            string deleteQuery = "DELETE FROM users WHERE id = @id";
+
+            // Sorguyu çalıştır
+            int affectedRows = connection.Execute(deleteQuery, new { id = deleteId });
+
+            // Sonuç
+            if (affectedRows > 0)
+                Console.WriteLine($"🗑️ ID {deleteId} olan kullanıcı silindi!");
+            else
+                Console.WriteLine($"⚠️ ID {deleteId} bulunamadı, silinmedi.");
+        }
+    }
+}
+</code></pre>
+
+    <h2>Kaynakça</h2>
+    <ul>
+        <li><a href="https://www.example.com" target="_blank" rel="noopener noreferrer">Example Kaynak 1</a></li>
+    </ul>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a href="" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a href="" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork'dur.</p>
+        </div>
+
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

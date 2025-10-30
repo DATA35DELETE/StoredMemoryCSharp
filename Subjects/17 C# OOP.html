@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <script src="../main.js"></script>
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>C# : OOP</title>
+</head>
+<body>
+    <h1>OOP</h1>
+
+    <h2>OOP Nedir?</h2>
+    <pre id="preh2">    OOP, yani Object Oriented Programming (Nesne Yönelimli Programlama), C# programlama dilinin temelini oluşturur. OOP, programlama dillerinde fazla kod yazmayı önlemek için belirli yöntemler kullanır.</pre>
+
+    <pre id="preh2">    Dört prensibe dayanır:</pre>
+
+    <h2>Prensipler</h2>
+
+    <h3>Kapsülleme (Encapsulation)</h3>
+    <pre id="preh3">    Verileri ve fonksiyonları dışarıdan yapılacak gereksiz işlemlere karşı korur. Böylece yapının iç işleyişi korunur.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">public class Araba
+{
+    // Private field’lar (dışarıdan direkt erişilemez)
+    private int hiz;
+    private string model;
+
+    // Public property’ler (kontrollü erişim için)
+    public int Hiz
+    {
+        get { return hiz; }
+        set
+        {
+            if (value >= 0 && value <= 300) // Hız kontrolü
+                hiz = value;
+            else
+                throw new Exception("Hız 0-300 arasında olmalı!");
+        }
+    }
+
+    public string Model
+    {
+        get { return model; }
+        set { model = value; }
+    }
+
+    // Public metot
+    public void Hizlan(int artis)
+    {
+        Hiz += artis;
+        Console.WriteLine($"{Model} {Hiz} km/s hıza ulaştı!");
+    }
+}
+
+public static void Main(string[] args)
+{
+    // Kullanımı
+    Araba araba = new Araba();
+    araba.Model = "Toyota";
+    araba.Hizlan(50); // Toyota 50 km/s hıza ulaştı!
+}</code></pre>
+
+    <h3>Kalıtım (Inheritance)</h3>
+    <pre id="preh3">    Kalıtım, OOP prensiplerinde en önemli öğelerden biridir. Kalıtım, bir sınıftaki özellikleri başka bir sınıfa aktarmaktır.</pre>
+
+    <pre id="preh3">    Örneğin, tüm canlıların ortak özellikleri beslenme ve solunum yapmalarıdır. Bu iki özelliği Canlilik adında bir sınıfa koyalım. Ardından Kedi adında bir sınıf oluşturalım. Kedilerin özelliklerini yazdıktan sonra <code class="language-csharp">:</code> ile Canlilik sınıfını ekleyelim.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">public class Canlilik // Canlıların iki ortak özelliği
+{
+    public void beslenme() // Beslenme fonksiyonu
+    {
+        Console.WriteLine("Canlı beslendi");
+    }
+
+    public void solunum() // Solunum fonksiyonu
+    {
+        Console.WriteLine("Canlı nefes alıp verdi");
+    }
+}
+
+public class Kedi : Canlilik // Kedi canlısının, Canlilik sınıfındaki özelliklerini yükledik
+{
+    public string ismi = "Boncuk";
+    public byte yasi = 2;
+}
+
+public static void Main(string[] args) // Ana fonksiyon
+{
+    Kedi canli = new Kedi(); // Kedimizi oluşturuyoruz
+
+    canli.beslenme(); // Kedimiz Canlilik sınıfından gelen beslenme fonksiyonunu çalıştırıyor
+    canli.solunum();  // Kedimiz Canlilik sınıfından gelen solunum fonksiyonunu çalıştırıyor
+
+    Console.WriteLine("Canlının ismi: " + canli.ismi); // Kedinin ismi
+    Console.WriteLine("Canlının yaşı: " + canli.yasi); // Kedinin yaşı
+}</code></pre>
+
+    <pre id="preh3">    Böylece kalıtım özelliğini kullanmış olduk.</pre>
+
+    <h3>Çok Biçimlilik (Polymorphism)</h3>
+    <pre id="preh3">    Çok biçimlilik, aynı ada sahip fonksiyonların farklı işlemler yapabilmesini sağlayan prensiptir. Çoğunlukla fonksiyonları gruplandırabilmek için kullanılır.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">public static void Main(string[] args)
+{
+    Console.WriteLine(selamVer());       // Teknik olarak aynı fonksiyonu çağırsalar da
+    Console.WriteLine(selamVer("Data")); // Çok biçimlilik sayesinde aynı fonksiyon fakat farklı işlemler yapılabilir.
+}
+
+public static string selamVer()
+{
+    return "Selam";
+}
+public static string selamVer(string name)
+{
+    return "Selam, " + name;
+}</code></pre>
+
+    <h3>Soyutlama (Abstraction)</h3>
+    <pre id="preh3">    Soyutlama, içeriği olmayan ancak var olan fonksiyonlar oluşturmak için kullanılan bir prensiptir. Gerekli yerlerde gövdesiz, yani içeriği olmayan fonksiyonlar içerikle doldurularak kullanılır.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">public interface IHareketEdebilir
+{
+    void HareketEt();
+}
+
+public class Araba : IHareketEdebilir
+{
+    public void HareketEt()
+    {
+        Console.WriteLine("Araba 4 tekerlekle hareket ediyor!");
+    }
+}
+
+public class Ucak : IHareketEdebilir
+{
+    public void HareketEt()
+    {
+        Console.WriteLine("Uçak havada uçuyor!");
+    }
+}
+
+public static void Main(string[] args)
+{
+    // Kullanımı
+    IHareketEdebilir araba = new Araba();
+    IHareketEdebilir ucak = new Ucak();
+    araba.HareketEt(); // Araba 4 tekerlekle hareket ediyor!
+    ucak.HareketEt(); // Uçak havada uçuyor!
+}</code></pre>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='16 C%23 Sınıflar.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='18 C%23 Dosya İşlemleri.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script src="../main.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>C# : Input Alma</title>
+</head>
+<body>
+    <h1>Input Alma</h1>
+
+    <h2>Input Nedir?</h2>
+    <pre id="preh2">    Input, programlarda kullanıcının verdiği verileri ifade etmek için kullanılır.</pre>
+
+    <pre id="preh2">    Bu sayfaya kadar statik programlar yazdık; yani yazılımcının belirlediği değişkenlerle işlemler yaptık. Dinamik, yani kullanıcıyla etkileşimli programlar için input çok önemlidir. Günümüzde birkaç uygulama hariç tüm uygulamalar dinamik yazılır.</pre>
+    
+    <h2>Console.ReadLine</h2>
+    <pre id="preh2">    C# programlama dilinde <code>Console.ReadLine()</code> komutu ile konsol üzerinden kullanıcıdan yazı girdisi alınır. Bu komut, kullanıcının yazdığı ifadeyi döndürür. Bu nedenle, bir <code>string</code> veri türünde değişkene atanır, yoksa veri boşa gider.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">namespace storedMemoryCSharp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("İsminiz: "); // Kullanıcıya bilgi vermek için
+            string name = Console.ReadLine(); // Kullanıcıdan veri alma
+
+            Console.WriteLine("Hoş geldiniz " + name); // Kullanıcıya merhaba deme
+        }
+    }
+}</code></pre>
+
+    <pre id="preh2">    <code>Console.ReadLine()</code>, yalnızca <code>string</code> veri türü döndürür. Örneğin, <code>int</code> veri türüne ihtiyaç duyulduğunda veri türü dönüştürülür.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">namespace storedMemoryCSharp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Birinci sayıyı giriniz: ");
+            int sayi1 = Convert.ToInt32(Console.ReadLine()); // String’i int’e çevirme
+
+            Console.Write("İkinci sayıyı giriniz: ");
+            int sayi2 = Convert.ToInt32(Console.ReadLine()); // String’i int’e çevirme
+
+            int toplam = sayi1 + sayi2; // Toplama işlemi
+            Console.WriteLine("Toplam: " + toplam); // Sonucu gösterme
+        }
+    }
+}</code></pre>
+
+    <h2>Kaynakça</h2>
+    <ul>
+        <li><a href="https://www.youtube.com/watch?v=-6lu9IHqlUA&list=PLEcJSEQK_cD75mzGvnEkyZJoPiCl4bxJt&index=13" target="_blank" rel="noopener noreferrer">C# ile Input Alma</a></li>
+    </ul>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='./9 C%23 Listeler.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='./11 C%23 Hata Yönetimi.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

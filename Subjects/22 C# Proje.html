@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../main.css">
+    <script src="../main.js"></script>
+
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min..js"></script>
+    <script>
+        hljs.highlightAll();
+        hljs.initLineNumbersOnLoad();
+    </script>
+
+    <title>Proje : SMXForker</title>
+
+</head>
+<body>
+    <h1>SMXForker</h1>
+
+    <h2>Form1.Designer.cs</h2>
+    <pre id="codeh2"><code class="language-csharp">namespace SMXForker
+{
+    partial class Form1
+    {
+        /// <summary>
+        ///Gerekli tasarımcı değişkeni.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        ///Kullanılan tüm kaynakları temizleyin.
+        /// </summary>
+        ///<param name="disposing">yönetilen kaynaklar dispose edilmeliyse doğru; aksi halde yanlış.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer üretilen kod
+
+        /// <summary>
+        /// Tasarımcı desteği için gerekli metot - bu metodun 
+        ///içeriğini kod düzenleyici ile değiştirmeyin.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.welcomeTab = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.whatTab = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.infoTab = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.iisVideoUse = new System.Windows.Forms.CheckBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.projectName = new System.Windows.Forms.Label();
+            this.pathTab = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.progresbarTab = new System.Windows.Forms.TabPage();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.finishTab = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tabControl1.SuspendLayout();
+            this.welcomeTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.whatTab.SuspendLayout();
+            this.infoTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pathTab.SuspendLayout();
+            this.progresbarTab.SuspendLayout();
+            this.finishTab.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.welcomeTab);
+            this.tabControl1.Controls.Add(this.whatTab);
+            this.tabControl1.Controls.Add(this.infoTab);
+            this.tabControl1.Controls.Add(this.pathTab);
+            this.tabControl1.Controls.Add(this.progresbarTab);
+            this.tabControl1.Controls.Add(this.finishTab);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(484, 261);
+            this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            // 
+            // welcomeTab
+            // 
+            this.welcomeTab.BackColor = System.Drawing.SystemColors.Control;
+            this.welcomeTab.Controls.Add(this.label1);
+            this.welcomeTab.Controls.Add(this.button1);
+            this.welcomeTab.Controls.Add(this.pictureBox1);
+            this.welcomeTab.Location = new System.Drawing.Point(4, 22);
+            this.welcomeTab.Name = "welcomeTab";
+            this.welcomeTab.Padding = new System.Windows.Forms.Padding(3);
+            this.welcomeTab.Size = new System.Drawing.Size(476, 235);
+            this.welcomeTab.TabIndex = 0;
+            this.welcomeTab.Text = "Welcome To SMXForker";
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Noto Sans JP", 27.75F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(-4, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(484, 57);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Welcome To SMXForker";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Noto Sans JP", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button1.Location = new System.Drawing.Point(62, 150);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(155, 61);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Start";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(370, 129);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // whatTab
+            // 
+            this.whatTab.BackColor = System.Drawing.SystemColors.Control;
+            this.whatTab.Controls.Add(this.button3);
+            this.whatTab.Controls.Add(this.button2);
+            this.whatTab.Controls.Add(this.textBox1);
+            this.whatTab.Controls.Add(this.label2);
+            this.whatTab.Location = new System.Drawing.Point(4, 22);
+            this.whatTab.Name = "whatTab";
+            this.whatTab.Padding = new System.Windows.Forms.Padding(3);
+            this.whatTab.Size = new System.Drawing.Size(476, 235);
+            this.whatTab.TabIndex = 1;
+            this.whatTab.Text = "What is this SMXForker";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(393, 204);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Next";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(8, 204);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Previous";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.CausesValidation = false;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(8, 67);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox1.Size = new System.Drawing.Size(460, 113);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Text = resources.GetString("textBox1.Text");
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Noto Sans JP", 27.75F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(-4, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(484, 61);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "What Is This SMXForker";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // infoTab
+            // 
+            this.infoTab.Controls.Add(this.label5);
+            this.infoTab.Controls.Add(this.label4);
+            this.infoTab.Controls.Add(this.iisVideoUse);
+            this.infoTab.Controls.Add(this.pictureBox3);
+            this.infoTab.Controls.Add(this.pictureBox2);
+            this.infoTab.Controls.Add(this.checkBox1);
+            this.infoTab.Controls.Add(this.button4);
+            this.infoTab.Controls.Add(this.button5);
+            this.infoTab.Controls.Add(this.textBox2);
+            this.infoTab.Controls.Add(this.projectName);
+            this.infoTab.Location = new System.Drawing.Point(4, 22);
+            this.infoTab.Name = "infoTab";
+            this.infoTab.Size = new System.Drawing.Size(476, 235);
+            this.infoTab.TabIndex = 2;
+            this.infoTab.Text = "Get The Information";
+            this.infoTab.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(5, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 17);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Wallpaper";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(180, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 17);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Favicon:";
+            // 
+            // iisVideoUse
+            // 
+            this.iisVideoUse.AutoSize = true;
+            this.iisVideoUse.Location = new System.Drawing.Point(8, 143);
+            this.iisVideoUse.Name = "iisVideoUse";
+            this.iisVideoUse.Size = new System.Drawing.Size(85, 17);
+            this.iisVideoUse.TabIndex = 18;
+            this.iisVideoUse.Text = "Video usage";
+            this.iisVideoUse.UseVisualStyleBackColor = true;
+            this.iisVideoUse.CheckedChanged += new System.EventHandler(this.iisVideoUse_CheckedChanged);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.White;
+            this.pictureBox3.Location = new System.Drawing.Point(8, 33);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(160, 90);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 17;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Location = new System.Drawing.Point(177, 33);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(283, 72);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(176, 17);
+            this.checkBox1.TabIndex = 13;
+            this.checkBox1.Text = "Using the Stored Memory plugin";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(393, 204);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Next";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(8, 204);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Previous";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(283, 33);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(175, 20);
+            this.textBox2.TabIndex = 1;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // projectName
+            // 
+            this.projectName.AutoSize = true;
+            this.projectName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectName.Location = new System.Drawing.Point(280, 13);
+            this.projectName.Name = "projectName";
+            this.projectName.Size = new System.Drawing.Size(97, 17);
+            this.projectName.TabIndex = 0;
+            this.projectName.Text = "Project Name:";
+            this.projectName.Click += new System.EventHandler(this.projectName_Click);
+            // 
+            // pathTab
+            // 
+            this.pathTab.Controls.Add(this.button6);
+            this.pathTab.Controls.Add(this.button7);
+            this.pathTab.Controls.Add(this.label3);
+            this.pathTab.Location = new System.Drawing.Point(4, 22);
+            this.pathTab.Name = "pathTab";
+            this.pathTab.Size = new System.Drawing.Size(476, 235);
+            this.pathTab.TabIndex = 3;
+            this.pathTab.Text = "Road to be Built";
+            this.pathTab.UseVisualStyleBackColor = true;
+            this.pathTab.Click += new System.EventHandler(this.pathTab_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(393, 209);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "Next";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(8, 209);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "Previous";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(182, 102);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "label3";
+            // 
+            // progresbarTab
+            // 
+            this.progresbarTab.Controls.Add(this.progressBar1);
+            this.progresbarTab.Location = new System.Drawing.Point(4, 22);
+            this.progresbarTab.Name = "progresbarTab";
+            this.progresbarTab.Size = new System.Drawing.Size(476, 235);
+            this.progresbarTab.TabIndex = 5;
+            this.progresbarTab.Text = "Progress Bar";
+            this.progresbarTab.UseVisualStyleBackColor = true;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(8, 101);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(460, 23);
+            this.progressBar1.TabIndex = 0;
+            // 
+            // finishTab
+            // 
+            this.finishTab.Controls.Add(this.label6);
+            this.finishTab.Location = new System.Drawing.Point(4, 22);
+            this.finishTab.Name = "finishTab";
+            this.finishTab.Size = new System.Drawing.Size(476, 235);
+            this.finishTab.TabIndex = 4;
+            this.finishTab.Text = "Finish";
+            this.finishTab.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("MV Boli", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(476, 235);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Thanks You! < 3";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(484, 261);
+            this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Form1";
+            this.Text = "SMXForker";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.tabControl1.ResumeLayout(false);
+            this.welcomeTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.whatTab.ResumeLayout(false);
+            this.whatTab.PerformLayout();
+            this.infoTab.ResumeLayout(false);
+            this.infoTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pathTab.ResumeLayout(false);
+            this.pathTab.PerformLayout();
+            this.progresbarTab.ResumeLayout(false);
+            this.finishTab.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage welcomeTab;
+        private System.Windows.Forms.TabPage whatTab;
+        private System.Windows.Forms.TabPage infoTab;
+        private System.Windows.Forms.TabPage pathTab;
+        private System.Windows.Forms.TabPage finishTab;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label projectName;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.CheckBox iisVideoUse;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabPage progresbarTab;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label6;
+    }
+}</code></pre>
+
+    <h2>Form1.cs</h2>
+    <pre id="codeh2"><code class="language-csharp">using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.IO;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace SMXForker
+{
+    public partial class Form1 : Form
+    {
+        public static string forkeredProjectName;
+
+        public static string ppImage;
+
+        public static string wallpaperImage;
+        public static string videoFile;
+
+        public static string forkeredProjectPath;
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 1;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 2;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 2;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            forkeredProjectName = ((checkBox1.Checked) ? "" : "SM") + textBox2.Text;
+
+            if (forkeredProjectName != null && forkeredProjectName.Length > 0 && !forkeredProjectName.Equals("SM"))
+            {
+                FolderBrowserDialog folderDialog = new FolderBrowserDialog();
+
+                folderDialog.Description = "Bir klasör seçin";
+                folderDialog.ShowNewFolderButton = true;
+
+                if (folderDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string secilenKlasor = folderDialog.SelectedPath;
+                    
+                    label3.Text = secilenKlasor;
+
+                    forkeredProjectPath = secilenKlasor;
+
+                    tabControl1.SelectedIndex = 3;
+                }
+                else
+                {
+                    MessageBox.Show("A directory must be selected!");
+
+                    tabControl1.SelectedIndex = 2;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Your information is incorrect or incomplete!");
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                projectName.Text = "Absolute Name Project";
+            }
+            else
+            {
+                projectName.Text = "Name Project";
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void projectName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Filter = "Image Files (*.png;*.jpg;*.jpeg;*.bmp)|*.png;*.jpg;*.jpeg;*.bmp";
+            openFileDialog.Title = "Select an image";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string dosyaYolu = openFileDialog.FileName;
+
+                pictureBox2.Image = new Bitmap(dosyaYolu);
+
+                wallpaperImage = dosyaYolu;
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Filter = "Image Files (*.png;*.jpg;*.jpeg;*.bmp)|*.png;*.jpg;*.jpeg;*.bmp";
+            openFileDialog.Title = "Select an image";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string dosyaYolu = openFileDialog.FileName;
+
+                pictureBox3.Image = new Bitmap(dosyaYolu);
+
+                ppImage = dosyaYolu;
+            }
+        }
+
+        private void iisVideoUse_CheckedChanged(object sender, EventArgs e)
+        {
+            if (iisVideoUse.Checked)
+            {
+                videoFile = null;
+                wallpaperImage = null;
+
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+
+                openFileDialog.Filter = "Video Files (*.mp4)|*.mp4";
+                openFileDialog.Title = "Select an video";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string dosyaYolu = openFileDialog.FileName;
+
+                    videoFile = dosyaYolu;
+                }
+            }
+            else
+            {
+                videoFile = null;
+                wallpaperImage = null;
+
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+
+                openFileDialog.Filter = "Image Files (*.png;*.jpg;*.jpeg;*.bmp)|*.png;*.jpg;*.jpeg;*.bmp";
+                openFileDialog.Title = "Select an image";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string dosyaYolu = openFileDialog.FileName;
+
+                    pictureBox3.Image = new Bitmap(dosyaYolu);
+
+                    wallpaperImage = dosyaYolu;
+                }
+            }
+        }
+
+        //
+
+        private void pathTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            forkeredProjectName = null;
+            ppImage = null;
+            wallpaperImage = null;
+            videoFile = null;
+            forkeredProjectPath = null;
+
+            textBox2.Text = string.Empty;
+            checkBox1.Checked = false;
+            iisVideoUse.Checked = false;
+            pictureBox2.Image = null;
+            pictureBox3.Image = null;
+
+            tabControl1.SelectedIndex = 2;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 4;
+
+            progressBar1.Value += progressClasses.work1(".", forkeredProjectPath + "\\" + forkeredProjectName);
+
+            progressBar1.Value += progressClasses.work2();
+
+            progressBar1.Value += progressClasses.work3();
+
+            progressBar1.Value += progressClasses.work4();
+
+            if(iisVideoUse.Checked)
+            {
+                progressBar1.Value += progressClasses.work51();
+            }
+            else
+            {
+                progressBar1.Value += progressClasses.work52();
+            }
+
+            if (wallpaperImage != null)
+            {
+                progressBar1.Value += progressClasses.work6();
+            }
+            else
+            {
+                progressBar1.Value += 10;
+            }
+
+            MessageBox.Show("Finish");
+
+            tabControl1.SelectedIndex = 5;
+        }
+
+        class progressClasses
+        {
+            public static int work1(string kaynak, string hedef)
+            {
+                // Eğer hedef klasör yoksa oluştur
+                Directory.CreateDirectory(hedef);
+
+                // Kaynaktaki tüm dosyaları kopyala
+                foreach (string dosya in Directory.GetFiles(kaynak))
+                {
+                    string hedefDosya = Path.Combine(hedef, Path.GetFileName(dosya));
+                    File.Copy(dosya, hedefDosya, true); // true => var olanı üzerine yazar
+                }
+
+                // Alt klasörleri de aynı şekilde kopyala
+                foreach (string altKlasor in Directory.GetDirectories(kaynak))
+                {
+                    string hedefAltKlasor = Path.Combine(hedef, Path.GetFileName(altKlasor));
+                    work1(altKlasor, hedefAltKlasor);
+                }
+                return 20;
+            }
+
+            public static int work2()
+            {
+                File.Delete(forkeredProjectPath + "\\" + forkeredProjectName + "\\SMXForker.exe");
+
+                return 10;
+            }
+
+            public static int work3()
+            {
+                using (StreamWriter sw = new StreamWriter(forkeredProjectPath + "\\" + forkeredProjectName + "\\X.roadMap.md", false))
+                {
+                    string roadMap = $@"# Stored Memory {new string(forkeredProjectName.Where(char.IsUpper).ToArray())} (SM{new string(forkeredProjectName.Where(char.IsUpper).ToArray())})
+
+## İçindekiler
+
+## Ön Söz
+
+## X : Giriş
+
+## X : IDE Kurulumu
+
+## X : Veri
+
+## X : Opetörler
+
+## X : Karar Yapıları
+
+## X : Döngüler
+
+## X : Listeler
+
+## X : Input Alma
+
+## X : Hata Yönetimi
+
+## X : Paralel Programlama
+
+## X : Quiz
+
+## Proje : Ara Proje
+
+## X : Fonksiyonlar
+
+## X : Sınıflar
+
+## X : OOP
+
+## X : Dosya İşlemleri
+
+## X : Database İşlemleri
+
+## X : Pencere Sistemi
+
+## X : Quizz
+
+## Proje : Ana Proje
+
+## X : Framework1
+
+## X : Framework2
+
+## X : Frameword3
+
+## X : Quizzz
+
+## X : Ana Framework Projesi
+
+## Son Söz ve Kapanış";
+
+                    try
+                    {
+                        roadMap = roadMap.Replace("X", forkeredProjectName.Replace("SM", ""));
+                    }
+                    catch (Exception e)
+                    {
+                        roadMap = roadMap.Replace("X", forkeredProjectName);
+                    }
+
+                    sw.WriteLine(roadMap);
+                }
+
+                File.Copy(forkeredProjectPath + "\\" + forkeredProjectName + "\\X.roadMap.md", forkeredProjectPath + "\\" + forkeredProjectName + $"\\{forkeredProjectName.Replace("SM", "")}.roadMap.md");
+
+                File.Delete(forkeredProjectPath + "\\" + forkeredProjectName + "\\X.roadMap.md");
+
+                return 10;
+            }
+
+            public static int work4()
+            {
+                using (StreamWriter sw = new StreamWriter(forkeredProjectPath + "\\" + forkeredProjectName + "\\Subjects\\demo.html", false))
+                {
+                    string demoHtml = @"&lt;!DOCTYPE html>
+&lt;html lang=""tr"">
+&lt;head>
+    &lt;meta charset=""UTF-8"">
+    &lt;meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+
+    &lt;link rel=""stylesheet"" href=""../main.css"">
+    &lt;script src=""../main.js"">&lt;/script>
+
+    &lt;link rel=""icon"" type=""image/png"" href=""img/pp.png"">
+
+    &lt;link rel=""stylesheet"" href=""../hljs/vs2015.min.css"">
+    &lt;script src=""../hljs/highlight.min.js"">&lt;/script>
+    &lt;script src=""../hljs/number.min..js"">&lt;/script>
+    &lt;script>
+        hljs.highlightAll();
+        hljs.initLineNumbersOnLoad();
+    &lt;/script>
+
+    &lt;title>X : Demo&lt;/title>
+
+&lt;/head>
+&lt;body>
+    &lt;h1>Languague Subject&lt;/h1>
+
+    &lt;h2>Subject&lt;/h2>
+    &lt;pre id=""preh2"">    Stored &lt;code>Public&lt;/code> X &lt;/pre>
+
+    &lt;pre id=""codeh2"">&lt;code class=""language-java"">code&lt;/code>&lt;/pre>
+
+    &lt;div id=""divh2Img"">
+        &lt;img src=""../Subjects/img/wallpapers/example.png"" alt=""Örnek Resim"" width=""400px"" >
+    &lt;/div>
+
+    &lt;div id=""divh2Video"">
+        &lt;video width=""400px"" controls>
+            &lt;source src=""../Subjects/vid/example.mp4"" type=""video/mp4"">
+            Tarayıcınız video etiketini desteklemiyor.
+        &lt;/video>
+    &lt;/div> 
+
+    &lt;table id=""tableh2"" border=""1"">
+        &lt;thead>
+            &lt;tr>
+                &lt;th>th1&lt;/th>
+                &lt;th>th2&lt;/th>
+            &lt;/tr>
+        &lt;/thead>
+        &lt;tbody>
+            &lt;tr>
+                &lt;td>td1&lt;/td>
+                &lt;td>td2&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;td>td3&lt;/td>
+                &lt;td>td4&lt;/td>
+            &lt;/tr>
+        &lt;/tbody>
+    &lt;/table>
+
+    &lt;ul id=""listh2"">
+        &lt;li>li1&lt;/li>
+        &lt;li>li2&lt;/li>
+        &lt;li>li3&lt;/li>
+    &lt;/ul>
+
+    &lt;h3>Sub Subject&lt;/h3>
+    &lt;pre id=""preh3"">    Stored Memory Languague&lt;/pre>
+
+    &lt;pre id=""codeh3"">&lt;code class=""language-java"">public static main(String[] args)
+{
+    System.out.println(""SMX v3.0"");
+}
+&lt;/code>&lt;/pre>
+
+    &lt;div id=""divh3Img"">
+        &lt;img src=""../Subjects/img/wallpapers/example.png"" alt=""Örnek Resim"" width=""400px"" >
+    &lt;/div>
+
+    &lt;div id=""divh3Video"">
+        &lt;video width=""400px"" controls src=""../Subjects/vid/example.mp4"" type=""video/mp4"">&lt;/video>
+    &lt;/div> 
+
+    &lt;table id=""tableh3"" border=""1"">
+        &lt;thead>
+            &lt;tr>
+                &lt;th>th1&lt;/th>
+                &lt;th>th2&lt;/th>
+            &lt;/tr>
+        &lt;/thead>
+        &lt;tbody>
+            &lt;tr>
+                &lt;td>td1&lt;/td>
+                &lt;td>td2&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;td>td3&lt;/td>
+                &lt;td>td4&lt;/td>
+            &lt;/tr>
+        &lt;/tbody>
+    &lt;/table>
+
+    &lt;ul id=""listh3"">
+        &lt;li>li1&lt;/li>
+        &lt;li>li2&lt;/li>
+        &lt;li>li3&lt;/li>
+    &lt;/ul>
+
+    &lt;h2>Kaynakça&lt;/h2>
+    &lt;ul>
+        &lt;li>&lt;a href=""https://www.example.com"" target=""_blank"" rel=""noopener noreferrer"">Example Kaynak 1&lt;/a>&lt;/li>
+    &lt;/ul>
+
+    &lt;div style=""height: 100px;"">&lt;/div>
+
+    &lt;footer style=""position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;"">
+        &lt;div>
+            &lt;a href="""" style=""margin-right: 20px; cursor:pointer;"">
+                &larr; Önceki
+            &lt;/a>
+            &lt;a href="""" style=""cursor:pointer;"">
+                Sonraki &rarr;
+            &lt;/a>
+        &lt;/div>
+        &lt;div>
+            &lt;p>2025 SMX Projesinin Bir Fork'dur.&lt;/p>
+        &lt;/div>
+    &lt;/footer>
+&lt;/body>
+&lt;/html>";
+                
+                    demoHtml = demoHtml.Replace("X", forkeredProjectName);
+
+                    sw.WriteLine(demoHtml);
+                }
+
+                return 20;
+            }
+
+            public static int work51() 
+            {
+                File.Copy(forkeredProjectPath + "\\" + forkeredProjectName + "\\Subjects\\vid\\example.mp4", videoFile, true);
+
+                return 20;
+            }
+
+            public static int work52()
+            {
+                File.Delete(forkeredProjectPath + "\\" + forkeredProjectName + "\\main.js");
+
+                return 20;
+            }
+
+            public static int work6()
+            {
+
+                File.Copy(forkeredProjectPath + "\\" + forkeredProjectName + "\\Subjects\\img\\pp.pmg", ppImage, true);
+                File.Copy(forkeredProjectPath + "\\" + forkeredProjectName + "\\Subjects\\img\\example.pmg", wallpaperImage, true);
+
+                return 10;
+            }
+        }
+    }
+}
+
+</code></pre>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a href="./21 C%23 Quiz.html" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a href="./23 WPF Giriş.html" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork'dur.</p>
+        </div>
+
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

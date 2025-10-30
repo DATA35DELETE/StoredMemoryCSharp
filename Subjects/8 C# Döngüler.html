@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script src="../main.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>C# : Döngüler</title>
+</head>
+<body>
+    <h1>Döngüler</h1>
+
+    <h2>Döngü Nedir?</h2>
+    <pre id="preh2">    Döngüler, bir olayı veya kod parçalarını belli bir koşula veya belirli bir miktar kadar çalıştıran yapılardır.</pre>
+
+    <pre id="preh2">    Döngülerin önemi, örneğin, konsola yüz kere “Hello” yazdırmamız gerektiğinde, `<code>Console.WriteLine("Hello")</code>`’ı yüz kere yazmak yerine döngüler sayesinde bu işi üç-dört satırda halledebiliriz. Yani kod tasarrufu sağlar.</pre>
+
+    <h2>While</h2>
+    <pre id="preh2">    While, C# programlama dilinde parantezlerindeki koşul `<code>true</code>` olduğu sürece kod bloğunu çalıştırır.</pre>
+
+    <p class="unlemh2"><img src="img/unlem.png" width="50px" style="display: inline-block;">    While döngülerde sonsuz döngü riski vardır. Eğer kodunuzda sonsuz döngü varsa program hatalarla karşılaşabilir!</p>
+
+    <pre id="codeh2"><code class="language-csharp">while (koşul)
+{
+    // Kodlar
+}</code></pre>
+
+    <h2>For</h2>
+    <pre id="preh2">    For, C# programlama dilinde parantezlerindeki belirtilmiş koşula bağlı olarak, belirlenen miktar kadar döner. While’ın aksine bu döngüde sonsuz döngü riski yoktur.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">for (int i = 0; i < döneceğiMiktar; i++)
+{
+    // Kodlar
+}</code></pre>
+
+    <h3>Foreach</h3>
+    <pre id="preh3">    Foreach, For döngüsünün alt türüdür. Verdiğimiz listeleri eleman sayısı kadar döner ve her adımda bir sonraki elemana geçer. Bu, “Listeler” sayfasında daha detaylı ele alınacak.</pre>
+
+    <h2>Break</h2>
+    <pre id="preh2">    Break, Switch-Case yapısında gördüğümüz gibi çalıştırıldığı an döngüyü sonlandırır ve kod akışı devam eder.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">while (koşul)
+{
+    // Kodlar
+    if (koşul)
+    {
+        break; // Döngüyü sonlandırır.
+    }
+}</code></pre>
+
+    <h2>Continue</h2>
+    <pre id="preh2">    Continue, döngülerde Break’in aksine döngüyü durdurmaz, mevcut adımı atlar ve bir sonraki adıma geçer.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">while (koşul)
+{
+    // Kodlar
+    if (koşul)
+    {
+        continue; // Mevcut adımı atlar ve bir sonraki adıma geçer.
+    }
+}</code></pre>
+
+    <h2>Kaynakça</h2>
+    <ul>
+        <li><a href="https://learn.microsoft.com/tr-tr/dotnet/csharp/language-reference/statements/iteration-statements" target="_blank" rel="noopener noreferrer">C# While ve For Yapıları</a></li>
+    </ul>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='7 C%23 Karar Yapıları.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='9 C%23 Listeler.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

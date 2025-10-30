@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script src="../main.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>C# : Operatörler</title>
+</head>
+<body>
+    <h1>Operatörler</h1>
+
+    <h2>Operatör Nedir?</h2>
+    <pre id="preh2">    Operatörler, basit matematik işlemleri veya mantıksal işlemler için kullanılan araçlardır.</pre>
+
+    <h2>Atama Operatörü</h2>
+    <pre id="preh2">    Atama, bir verinin değerini başka bir değişkene aktarmasıdır. Atama işleminin operatörü eşittir (=) işaretidir.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">int A = 10;
+int B = 20;
+
+A = B; // A’nın değeri artık 20 olur, B’nin değeri A’ya aktarılır.</code></pre>
+
+    <h2>Aritmetik Operatörler</h2>
+    <pre id="preh2">    Aritmetik operatörler, matematiksel işlemler için kullanılan operatörlerdir.</pre>
+
+    <h3>Toplama (+)</h3>
+    <pre id="preh3">    İki sayının toplamını alır.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">int A = 10;
+int B = 20;
+
+int C = A + B; // C’nin değeri 30 olur</code></pre>
+
+    <h3>Çıkarma (-)</h3>
+    <pre id="preh3">    İki sayının farkını alır.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">int A = 20;
+int B = 10;
+
+int C = A - B; // C’nin değeri 10 olur</code></pre>
+    
+    <h3>Çarpma (*)</h3>
+    <pre id="preh3">    İki sayının çarpımını alır.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">int A = 10;
+int B = 20;
+
+int C = A * B; // C’nin değeri 200 olur</code></pre>
+
+    <h3>Bölme (/)</h3>
+    <pre id="preh3">    İki sayının bölümünü alır.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">int A = 20;
+int B = 10;
+
+int C = A / B; // C’nin değeri 2 olur</code></pre>
+
+    <h3>Aritmetik Atama Operatörleri</h3>
+    <pre id="preh3">    Bu operatörler, hem aritmetik işlem yapar hem de atama işlemini gerçekleştirir. Kullanımı: değer1 aritmetikOperatör= değer2</pre>
+
+    <h2>Karşılaştırma Operatörleri</h2>
+    <pre id="preh2">    Karşılaştırma operatörleri, iki değişkenin değerini karşılaştırarak Boolean bir değer döndürür.</pre>
+
+    <h3>Eşittir (==)</h3>
+    <pre id="preh3">    İki değerin eşit olup olmadığını kontrol eder. Eşitse True, değilse False döner.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">int A = 10;
+int B = 20;
+
+bool C = A == B; // C’nin değeri False olur</code></pre>
+
+    <h3>Eşit Değildir (!=)</h3>
+    <pre id="preh3">    İki değerin eşit olup olmadığını kontrol eder. Eşit değilse true, eşitse false döner.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">int A = 10;
+int B = 20;
+
+bool C = A != B; // C’nin değeri true olur</code></pre>
+    
+    <h3>Büyüktür (>)</h3>
+    <pre id="preh3">    Soldaki değerin sağdaki değerden büyük olup olmadığını kontrol eder. Büyükse true, değilse false döner.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">int A = 20;
+int B = 10;
+
+bool C = A > B; // C’nin değeri true olur</code></pre>
+
+    <h3>Küçüktür (<)</h3>
+    <pre id="preh3">    Soldaki değerin sağdaki değerden küçük olup olmadığını kontrol eder. Küçükse true, değilse false döner.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">int A = 10;
+int B = 20;
+
+bool C = A < B; // C’nin değeri true olur</code></pre>
+
+    <h3>Büyük Eşittir (>=)</h3>
+    <pre id="preh3">    Soldaki değerin sağdaki değerden büyük veya eşit olup olmadığını kontrol eder. Büyük veya eşitse true, değilse false döner.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">int A = 20;
+int B = 10;
+
+bool C = A >= B; // C’nin değeri true olur</code></pre>
+
+    <h3>Küçük Eşittir (<=)</h3>
+    <pre id="preh3">    Soldaki değerin sağdaki değerden küçük veya eşit olup olmadığını kontrol eder. Küçük veya eşitse true, değilse false döner.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">int A = 10;
+int B = 20;
+
+bool C = A <= B; // C’nin değeri true olur</code></pre>
+
+    <h2>Mantıksal Operatörler</h2>
+    <pre id="preh2">    Mantıksal operatörler, birden fazla koşulu birleştirmek veya tersine çevirmek için kullanılır.</pre>
+
+    <h3>Ve (&&)</h3>
+    <pre id="preh3">    İki koşulun da doğru (true) olması durumunda true döner. Eğer herhangi bir koşul false ise false döner.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">bool A = true;
+bool B = false;
+
+bool C = A && B; // C’nin değeri false olur</code></pre>
+
+    <h3>Veya (||)</h3>
+    <pre id="preh3">    İki koşuldan en az birinin doğru (true) olması durumunda true döner. Her iki koşul da false ise false döner.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">bool A = true;
+bool B = false;
+
+bool C = A || B; // C’nin değeri true olur</code></pre>
+
+    <h3>Değil (!)</h3>
+    <pre id="preh3">    Bir koşulun tersini alır. Koşul true ise false, false ise true döner.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">bool A = true;
+bool B = !A; // B’nin değeri false olur</code></pre>
+
+    <h2>Yorum Operatörü</h2>
+    <pre id="preh2">    Yorum, programlamada yazılım dilinin dikkate almadığı ve yazılımcıların kodlarını diğer yazılımcılara açıklamasını sağlayan ifadelerdir. SMC# boyunca her kodu yorum operatörü ile açıklayacağım. Ayrıca “Temiz Kod” prensibinin temelini oluşturur.</pre>
+
+    <pre id="codeh2"><code>namespace storedMemoryCSharp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!"); // Bu kod Console’a “Hello World” yazdırır
+        }
+    }
+}
+</code></pre>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='5 C%23 Veri.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='7 C%23 Karar Yapıları.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

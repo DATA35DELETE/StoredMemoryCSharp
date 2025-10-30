@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script src="../main.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>Proje : Hesap Makinesi</title>
+</head>
+<body>
+    <h1>Hesap Makinesi</h1>
+
+    <h2>Proje Yapılışı</h2>
+    <pre id="preh2">    Evet, şimdi öğrendiklerimizi uygulamaya geldik. Bir önceki sayfada öğrendiklerimizi test etmiştik. Proje yaparken üç tane aşamamız vardır.</pre>
+
+    <h3>Düşünme</h3>
+    <pre id="preh3">    Düşünme aşamasında, projemizin ne olacağı ve neler içereceği planlanır.</pre>
+
+    <pre id="preh3">    Projemiz, konsol üzerinden çalışan bir hesap makinesi olacak ve dört işlemi desteklemeli. Ayrıca listeleri kullanarak geçmiş özelliği de olmalı. Çıkış yapılana kadar çalışmalı ve döngülerle kodlanmalı. Tamam, düşünme bu kadar olsun. Önemli bilgileri not edelim.</pre>
+
+    <h3>Gereksinimleri Karşılama</h3>
+    <pre id="preh3">    Şimdilik dış kütüphaneye ihtiyacımız yok. Bu yüzden bu kısmı atlıyoruz. Ancak ilerleyen sayfalarda bu kısmı <code>using</code> ile kullanacağız.</pre>
+
+    <h3>Yapılış</h3>
+    <pre id="preh3">    Artık düşündüklerimizi ve planladıklarımızı pratiğe dökme vakti!</pre>
+
+    <pre id="codeh3"><code class="language-csharp">namespace SMCS
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> gecmis = new List<string>();
+
+            while (true) // Ana döngü
+            {
+                Console.Clear(); // Konsolu temizler
+
+                Console.WriteLine("1: Toplama");
+                Console.WriteLine("2: Çıkarma");
+                Console.WriteLine("3: Çarpma");
+                Console.WriteLine("4: Bölme");
+                Console.WriteLine("5: Geçmişi Görüntüle");
+                Console.WriteLine("0/Q: Çıkış");
+                Console.Write("-->");
+
+                string entry1 = Console.ReadLine();
+
+                if (entry1.Equals("1")) // Toplama kısmı
+                {
+                }
+                else if (entry1.Equals("2")) // Çıkarma kısmı
+                {
+                }
+                else if (entry1.Equals("3")) // Çarpma kısmı
+                {
+                }
+                else if (entry1.Equals("4")) // Bölme kısmı
+                {
+                }
+                else if (entry1.Equals("5")) // Geçmişi görüntüleme
+                {
+                    Console.Clear(); // Konsolu temizler
+
+                    foreach (string islem in gecmis) // İşlemleri yazdırma
+                    {
+                        Console.WriteLine(islem);
+                    }
+
+                    Console.Read();
+
+                    Console.Clear(); // Konsolu temizler
+
+                    continue; // Döngüyü başa sar
+                }
+                else if (entry1.Equals("0") || entry1.Equals("Q") || entry1.Equals("q")) // Çıkış
+                {
+                    break; // Hesap makinesini kapatma
+                }
+            }
+        }
+    }
+}</code></pre>
+
+    <pre id="preh3">    Proje geliştirirken kodları adım adım yorumlamak, daha sağlıklı projeler üretmemizi sağlar. Yazdığımız kodlarla programa seçimleri tanıttık. Şimdi toplama kısmını yazalım.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">Console.Clear(); // Konsolu temizler
+
+while (true) // Toplama döngüsü
+{
+    Console.Write("Birinci sayıyı giriniz: "); // Birinci sayıyı isteme
+
+    string s1String = Console.ReadLine(); // Kullanıcıdan String türünde girdi alma
+    int s1 = 0; // Birinci sayı
+
+    try // Eğer kullanıcı sayı yerine string girerse, program hata verip çökebilir. Bunu önlemek için Try-Catch bloklarını kullandık
+    {
+        s1 = Convert.ToInt32(s1String); // Dönüştürme
+    }
+    catch (Exception e) // Dönüştürmede hata alınırsa
+    {
+        Console.WriteLine("Girdiğiniz veri sayı değildir!"); // Hata mesajı
+
+        Console.Read();
+
+        continue; // Döngüyü başa sarma
+    }
+
+    Console.Write("İkinci sayıyı giriniz: "); // İkinci sayıyı isteme
+
+    string s2String = Console.ReadLine(); // Kullanıcıdan String girdisi isteme
+    int s2 = 0; // İkinci sayı
+
+    try // Eğer kullanıcı sayı yerine string girerse, program hata verip çökebilir. Bunu önlemek için Try-Catch bloklarını kullandık
+    {
+        s2 = Convert.ToInt32(s2String); // Dönüştürme
+    }
+    catch (Exception e) // Dönüştürmede hata alınırsa
+    {
+        Console.WriteLine("Girdiğiniz veri sayı değildir!"); // Hata mesajı
+
+        Console.Read();
+
+        continue; // Döngüyü başa sarma
+    }
+
+    string islem = "\n" + s1String + " + " + s2String + " = " + (s1 + s2); // İşlemin String hali
+
+    Console.WriteLine(islem); // Konsolda gösterme
+
+    gecmis.Add(islem); // Geçmişe ekler
+
+    Console.Read();
+
+    Console.Clear(); // Konsolu temizler
+
+    break; // Toplama döngüsünü kırma
+}</code></pre>
+
+    <pre id="preh3">    Evet, hesap makineniz toplama işlemini yapabilir durumda! Peki diğer işlemler? İşte onun kodlarını yazmak size düşüyor! Yazdığımız komutları temel alarak devam edebilirsiniz.</pre>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='13 C%23 Quiz.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='15 C%23 Fonksiyonlar.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+    
+    <div style="height: 100px;"></div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script src="../main.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>C# : Sınıflar</title>
+</head>
+<body>
+    <h1>Sınıflar</h1>
+
+    <h2>Sınıf Nedir?</h2>
+    <pre id="preh2">    Sınıflar, C# dilinde değişkenleri veya fonksiyonları gruplandırabildiğimiz yapılardır.</pre>
+
+    <pre id="preh2">    Sınıflar, tıpkı gerçek hayattaki okul sınıflarına benzer. Bu sınıflar içinde, örneğin öğrenci sayısını <code>byte</code>, öğrencilerin çantalarındaki suyun litresini <code>float</code> ve öğretmenin ismini <code>string</code> olarak ifade edebiliriz. Öğretmenin ders anlatması gibi eylemler, sınıf içindeki fonksiyonlara örnektir.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">public class Araba // Sınıfımız
+{
+    public string Marka; // Marka değişkeni
+    public int Hiz; // Hız değişkeni
+
+    public void Hizlan() // Fonksiyonu
+    {
+        Hiz += 10;
+    }
+}</code></pre>
+
+    <h2>Nesne Oluşturma</h2>
+    <pre id="preh2">    Nesne oluşturma, sınıfların bir kopyasını oluşturup üzerinden kullanmaktır.</pre>
+
+    <pre id="preh2">    Örneğin, bir fabrikanın ürün üretmesi gibi. Fabrika, orijinal ürünü bire bir üreterek mağazalara gönderir, ancak orijinal ürün asla mağazalara verilmez.</pre>
+
+    <h3>Yapılışı</h3>
+    <pre id="preh3">    Nesne oluşturmak için <code>new</code> anahtar kelimesi kullanılır. Gerisi değişken tanımlama gibidir.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">class sinif // Sınıf
+{
+    public int ogrenciSayisi = 28; // Öğrenci sayısı
+    public float ogrencilerinSuMiktarlari = 17f; // Öğrencilerin su miktarı (Litre)
+
+    public string ogretmenIsmi = "Tilbe Bozkurt"; // Öğretmen ismi
+
+    public void dersAnlat() // Ders anlatma fonksiyonu
+    {
+        Console.WriteLine("Evet gençler, bugün C# programlama dilinde değişkenlerin türlerini göreceğiz."); // Ders anlatımı
+    }
+    
+    public int yoklamaAl(int i) // Sınıf yoklaması
+    {
+        return ogrenciSayisi - i;
+    }
+}
+
+public static void Main(string[] args) // Ana fonksiyon
+{
+    sinif atp10 = new sinif(); // 10 ATP isimli sınıfı oluştur
+    
+    Console.WriteLine("Ders öğretmeni: " + atp10.ogretmenIsmi); // Ders öğretmeni
+    Console.WriteLine(atp10.yoklamaAl(2)); // Öğretmen yoklamayı aldı
+    
+    atp10.dersAnlat(); // Ders anlattı
+}</code></pre>
+
+    <h2>Static</h2>
+    <pre id="preh2">    <code>static</code>, nesne oluşturmadan sınıfların içeriğinin kullanılmasını sağlar.</pre>
+
+    <pre id="preh2">    <code>static</code>, sınıfta önemli bilgiler varsa bir yerde yapılan değişikliğin diğer kısımlara yansımasını sağlar.</pre>
+
+    <pre id="preh2">    Kullanmak için sınıfın içindeki bileşenlere <code>static</code> ifadesi eklenir.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">class sinif // Sınıf
+{
+    public static int ogrenciSayisi = 28; // Öğrenci sayısı
+    public static float ogrencilerinSuMiktarlari = 17f; // Öğrencilerin su miktarı (Litre)
+
+    public static string ogretmenIsmi = "Tilbe Bozkurt"; // Öğretmen ismi
+
+    public static void dersAnlat() // Ders anlatma fonksiyonu
+    {
+        Console.WriteLine("Evet gençler, bugün C# programlama dilinde değişkenlerin türlerini göreceğiz."); // Ders anlatımı
+    }
+
+    public static int yoklamaAl(int i) // Sınıf yoklaması
+    {
+        return ogrenciSayisi - i;
+    }
+}
+
+public static void Main(string[] args) // Ana fonksiyon
+{
+    Console.WriteLine("Ders öğretmeni: " + sinif.ogretmenIsmi); // Ders öğretmeni
+    Console.WriteLine(sinif.yoklamaAl(2)); // Öğretmen yoklamayı aldı
+
+    sinif.dersAnlat(); // Ders anlattı
+}</code></pre>
+
+    <h2>Using</h2>
+    <pre id="preh2">    <code>using</code> ile projelerimize gerekli kütüphaneler eklenir. Örneğin, dosya işlemleri için <code>using System.IO;</code> eklenir.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">using System.IO;</code></pre>
+
+    <h2>Namespace</h2>
+    <pre id="preh2">    <code>namespace</code>, sınıflarımızı sınıflandırmak için kullanılır. Proje oluşturulurken kullanılan isim, ana <code>namespace</code> olarak tanımlanır.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">using System;
+
+namespace SMCS
+{
+    // Kodlar
+}</code></pre>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='15 C%23 Fonksiyonlar.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='17 C%23 OOP.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+
+    <div style="height: 100px;"></div>
+</body>
+</html>

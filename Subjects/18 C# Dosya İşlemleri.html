@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <script src="../main.js"></script>
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>C# : Dosya İşlemleri</title>
+</head>
+<body>
+    <h1>Dosya İşlemleri</h1>
+
+    <h2>Dosya Nedir?</h2>
+    <pre id="preh2">    Dosya, verileri kalıcı olarak HDD/SSD gibi depolama aygıtlarında saklamaktır. Dosya işlemleri, bu veriler üzerinde oluşturma, silme, yazma veya okuma gibi işlemleri ifade eder.</pre>
+
+    <h2>File Sınıfı</h2>
+    <pre id="preh2">    File sınıfı, C# programlama dilinde dosyaları oluşturmamızı veya silmemizi sağlayan bir sınıftır.</pre>
+
+    <h3>Fonksiyonları</h3>
+    <pre id="codeh3"><code class="language-csharp">using System.IO;
+
+File.Create("dosyanınYolu.Uzantısı"); // Create, dosyayı oluşturur
+File.Copy("orijinalDosya", "kopyası"); // Copy, dosya kopyalar
+File.Move("taşınanDosya", "taşınılanDosya"); // Move, dosya taşır
+
+bool dosyaVarmi = File.Exists("dosyanınYolu.Uzantısı"); // Exists, dosyanın varlığını kontrol eder
+
+File.WriteAllText("dosyanınYolu.Uzantısı", "İçerine yazılacak yazı");  // WriteAllText, dosyaya yazı yazar, ancak dosyanın mevcut içeriğini siler
+File.AppendAllText("dosyanınYolu.Uzantısı", "İçerine yazılacak yazı"); // AppendAllText, dosyaya yazı yazar ve mevcut içeriğe ekler
+
+string[] satirlar = File.ReadAllLines("dosyanınYolu.Uzantısı"); // ReadAllLines, dosyanın içeriğini tüm satırları bir string dizisi olarak verir
+
+foreach (string s in satirlar) //
+{                              // Satırları tek tek
+    Console.WriteLine(s);      // yazdıralım
+}                              //
+
+File.Delete("dosyanınYolu.Uzantısı"); // Delete, dosyayı siler</code></pre>
+
+    <h2>FileStream</h2>
+    <pre id="preh2">    FileStream, dosya üzerinde akışlı yönetimle daha fazla kontrol sağlar. StreamReader ve StreamWriter ile yazma/okuma işlemleri daha kontrollüdür. Ayrıca <code>using</code> ile kullanılan RAM otomatik olarak serbest bırakılır. Bunun için <code>System.Text</code> iç paketi kullanılır.</pre>
+
+    <h3>Fonksiyonları</h3>
+    <pre id="codeh3"><code class="language-csharp">using System.IO;
+using System.Text;
+
+// Dosya oluşturup, üstüne yazma
+using (FileStream fs = new FileStream("dosyanınYolu.Uzantısı", FileMode.Create, FileAccess.Write))
+{
+    byte[] veri = Encoding.UTF8.GetBytes("Birinci yazı");
+    fs.Write(veri, 0, veri.Length);
+}
+
+// Dosya oluşturup, yazı ekleme
+using (FileStream fs = new FileStream("dosyanınYolu.Uzantısı", FileMode.Append, FileAccess.Write))
+{
+    byte[] veri = Encoding.UTF8.GetBytes("\nİkinci yazı");
+    fs.Write(veri, 0, veri.Length);
+}
+
+// Dosyanın içeriği okuma
+using (FileStream fs = new FileStream("dosyanınYolu.Uzantısı", FileMode.Open, FileAccess.Read))
+{
+    byte[] buffer = new byte[(int)fs.Length];
+    fs.Read(buffer, 0, (int)fs.Length);
+    string fsIcerik = Encoding.UTF8.GetString(buffer);
+    Console.WriteLine($"FileStream ile okunan: {fsIcerik}");
+}</code></pre>
+
+    <h2>StreamWriter</h2>
+    <pre id="preh2">    StreamWriter, dosyalara yazma üzerine özelleşmiş bir sınıftır. Diğerlerine kıyasla StreamWriter, yazmada daha hızlıdır.</pre>
+
+    <h3>Kullanımı</h3>
+    <pre id="codeh3"><code class="language-csharp">using System.IO;
+
+using (StreamWriter sw = new StreamWriter("dosyanınYolu.Uzantısı", true)) // true ile açılırsa ekler, false ile açılırsa üstüne yazar
+{
+    sw.WriteLine("Birinci satır"); // Birinci satırı yazar
+    sw.WriteLine("İkinci satır");  // İkinci satırı yazar
+}</code></pre>
+
+    <h2>StreamReader</h2>
+    <pre id="preh3">    StreamReader, dosyaları okuma üzerine özelleşmiş bir sınıftır. Diğerlerine kıyasla StreamReader, okumada daha hızlıdır.</pre>
+
+    <h3>Kullanımı</h3>
+    <pre id="codeh3"><code class="language-csharp">using System.IO;
+
+// Okuma
+using (StreamReader sr = new StreamReader("dosyanınYolu.Uzantısı")) // Dosyayı StreamReader'la açar
+{
+    string satir;
+    while ((satir = sr.ReadLine()) != null)                           //
+    {                                                                 // Satırları teker teker
+        Console.WriteLine("StreamReader ile okunan satır: " + satir); // okuyarak Console yazdırır
+    }                                                                 //
+}</code></pre>
+
+    <h2>BinaryWriter</h2>
+    <pre id="preh2">    BinaryWriter, verileri düşük seviyeli bir şekilde dosyalara yazmamızı sağlar. Genelde ".dat" uzantılı dosyalara yazılır.</pre>
+
+    <h3>Kullanımı</h3>
+    <pre id="codeh3"><code class="language-csharp">using System.IO;
+
+// Yazma işlemi
+using (FileStream fs = new FileStream("dosyanınYolu.dat", FileMode.Create))
+using (BinaryWriter bw = new BinaryWriter(fs))
+{
+    bw.Write(42); // int
+    bw.Write(3.14); // double
+    bw.Write("Binary");
+}</code></pre>
+
+    <h2>BinaryReader</h2>
+    <pre id="preh2">    BinaryReader, verileri düşük seviyeli bir şekilde dosyalardan okumamızı sağlar.</pre>
+
+    <h3>Kullanımı</h3>
+    <pre id="codeh3"><code class="language-csharp">using System.IO;
+
+// Okuma işlemi
+using (FileStream fs = new FileStream("dosyanınYolu.dat", FileMode.Open))
+using (BinaryReader br = new BinaryReader(fs))
+{
+    int sayi = br.ReadInt32();
+    double ondalik = br.ReadDouble();
+    string metin = br.ReadString();
+    Console.WriteLine($"Binary okuma: {sayi}, {ondalik}, {metin}");
+}</code></pre>
+
+    <h2>JSON ile Dosya İşlemleri</h2>
+    <pre id="preh2">    JSON, verileri depolamak için geliştirilmiş bir dosya formatıdır. C#’ta JSON dosyalarını işlemek için <code>System.Text.Json</code> kütüphanesi kullanılır.</pre>
+
+    <h3>Fonksiyonları</h3>
+    <pre id="codeh3"><code class="language-csharp">using System.Text.Json;
+using System.IO;
+
+string jsonYolu = "kisi.json";
+var kisi = new Kisi { Ad = "Ahmet", Yas = 15 };
+string jsonString = JsonSerializer.Serialize(kisi, new JsonSerializerOptions { WriteIndented = true });
+File.WriteAllText(jsonYolu, jsonString);
+
+// JSON okuma
+string jsonIcerik = File.ReadAllText(jsonYolu);
+var okunanKisi = JsonSerializer.Deserialize<Kisi>(jsonIcerik);
+Console.WriteLine($"JSON'dan okunan: {okunanKisi.Ad}, {okunanKisi.Yas}");
+
+class Kisi
+{
+    public string Ad { get; set; }
+    public int Yas { get; set; }
+}</code></pre>
+
+    <h2>Kaynakça</h2>
+    <ul>
+        <li><a href="https://learn.microsoft.com/tr-tr/dotnet/api/system.io.file?view=net-8.0" target="_blank" rel="noopener noreferrer">C# File sınıfı</a></li>
+    </ul>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='17 C%23 OOP.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='19 C%23 Veritabanı İşlemleri.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script src="../main.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>C# : Listeler</title>
+</head>
+<body>
+    <h1>Listeler</h1>
+
+    <h2>Liste Nedir?</h2>
+    <pre id="preh2">    Liste, programlama dillerinde birden fazla veriyi tek bir yapıda toplamak, düzenlemek veya işlemek için kullanılır.</pre>
+
+    <pre id="preh2">    Listelerin önemi, birden fazla veriyi sıralamak veya toplu şekilde işlemek gerektiğinde ortaya çıkar. Çok sayıda değişken tanımlamak yerine, tek bir veri yapısında birden fazla değer saklanabilir.</pre>
+
+    <h3>Projeye Dahil Etmek</h3>
+    <pre id="preh3">    Bu sayfaya kadar kullandığımız yapılar, C#’ın içinde gömülüdür ve projemize ayrıca dahil etmemiz gerekmez. Ancak Listeler gibi yapılar, <code>using</code> ile projemize dahil edilir. Bu işlem, listeleri kullanmamızı sağlar.</pre>
+
+    <pre id="codeh3"><code class="language-csharp">using System.Collections.Generic;</code></pre>
+
+    <h2>List Kullanımı</h2>
+    <pre id="preh2">    List, C#’ta liste yapılarını kullanmak için bir sınıftır. Yapısı: <code>List&lt;veriTürü&gt;</code>.</pre>
+
+    <h3>Metotları</h3>
+    <pre id="codeh3"><code class="language-csharp">namespace SMCS
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List&lt;string&gt; list = new List&lt;string&gt;(); // String veri türünde Liste 
+
+            list.Count(); // Count, listenin eleman sayısını verir. Integer türünde
+            list.IndexOf("String"); // IndexOf, listede parantezlerindeki elemanın indeks numarasını verir
+
+            list.Contains("String"); // Contains, listede parantezlerindeki elemanın olup olmadığını kontrol eder. Boolean türünde
+            list.Equals(list); // Equals, listeyi parantezlerindeki listeyle karşılaştırır. Boolean türünde
+
+            list.Add("String"); // Add, listeye eleman ekler
+            list.Clear(); // Clear, listedeki tüm elemanları siler
+            list.Remove("String"); // Remove, listede parantezlerindeki elemanı siler
+            list.Reverse(); // Reverse, listeyi ters çevirir
+            list.Sort(); // Sort, listeyi alfabetik olarak sıralar
+        }
+    }
+}</code></pre>
+
+    <h2>Foreach</h2>
+    <pre id="preh2">    Foreach, “Döngüler” konusunda gördüğümüz gibi For döngüsünün bir alt türüdür.</pre>
+
+    <pre id="codeh2"><code class="language-csharp">foreach (string str in list)
+{
+    Console.WriteLine(str);
+}</code>
+    Bu kod, listedeki tüm elemanları sırasıyla yazdırır.</pre>
+
+    <h2>Kaynakça</h2>
+    <ul>
+        <li><a href="https://learn.microsoft.com/tr-tr/dotnet/api/system.collections.generic.list-1?view=net-8.0" target="_blank" rel="noopener noreferrer">C# List Yapısı</a></li>
+    </ul>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='8 C%23 Döngüler.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='./10 C%23 Input Alma.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

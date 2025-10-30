@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min.js"></script>
+    <script src="../main.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        };
+    </script>
+    <title>C# : Quiz</title>
+    <style>
+        button {
+            cursor: pointer;
+            border: none;
+            color: whitesmoke;
+            background-color: #555;
+            font-family: sans-serif;
+            font-size: 1.2rem;
+            padding: 10px;
+            border-radius: 10px;
+            overflow: visible;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .sIklI {
+            display: inline-block;
+            code {
+                overflow-x: visible;
+                background-color: transparent;
+                padding: 0;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz</h1>
+
+    <pre>    Günümüzde yazılıma ilginin artmasının en önemli fenomeni nedir?</pre>
+
+    <button id="true">A</button> <pre class="sIklI">Yapay zeka</pre><br>
+    <button id="false">B</button> <pre class="sIklI">Endüstri tasarımı</pre><br>
+    <button id="false">C</button> <pre class="sIklI">Covid-19</pre><br>
+    <button id="false">D</button> <pre class="sIklI">Asansör sistemleri</pre><br>
+
+    <br><br>
+
+    <pre>    Console.WriteLine ile Console.Write arasındaki fark nedir?</pre>
+
+    <button id="false">A</button> <pre class="sIklI">Konsola yazı yazdırır.</pre><br>
+    <button id="false">B</button> <pre class="sIklI">Konsola hata çıkartır.</pre><br>
+    <button id="true">C</button> <pre class="sIklI">Console.WriteLine satır koyarak, Console.Write ise satır bırakmayarak konsola yazdırır.</pre><br>
+    <button id="false">D</button> <pre class="sIklI">WriteLine Java’da, Write C#’ta konsola yazdırır.</pre><br>
+
+    <br><br>
+
+    <pre>    C# programlama dilinde verilerin yapısı nasıl olmalıdır?</pre>
+
+    <button id="false">A</button> <pre class="sIklI">erişimBelirteci veriTürü sabitlikTürü veriAdı = değeri;</pre><br>
+    <button id="true">B</button> <pre class="sIklI">erişimBelirteci sabitlikTürü veriTürü veriAdı = değeri;</pre><br>
+    <button id="false">C</button> <pre class="sIklI">erişimBelirteci veriTürü değeri = veriAdı;</pre><br>
+    <button id="false">D</button> <pre class="sIklI">veriAdı = değeri;</pre><br>
+
+    <br><br>
+
+    <pre>    ASCII tablosunda 65 sayısı hangi harfe denk gelir?</pre>
+
+    <button id="false">A</button> <pre class="sIklI">D’ye denk gelir.</pre><br>
+    <button id="false">B</button> <pre class="sIklI">G’ye denk gelir.</pre><br>
+    <button id="false">C</button> <pre class="sIklI">B’ye denk gelir.</pre><br>
+    <button id="true">D</button> <pre class="sIklI">A’ya denk gelir.</pre><br>
+
+    <br><br>
+
+    <pre><code>namespace storedMemoryCSharp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int tarih = 1923;
+
+            string kurulusYili = Convert.X(tarih);
+        }
+    }
+}</code></pre>
+    <pre>    Yukarıda verilen kod parçasına göre X’in yerine ne gelmelidir?</pre>
+
+    <button id="false">A</button> <pre class="sIklI">Int32</pre><br>
+    <button id="false">B</button> <pre class="sIklI">ToChar</pre><br>
+    <button id="false">C</button> <pre class="sIklI">ToByte</pre><br>
+    <button id="true">D</button> <pre class="sIklI">ToString</pre><br>
+
+    <br><br>
+
+    <pre>    Aşağıdaki 3 soruyu verilen koda göre çözünüz:</pre>
+    <pre><code>namespace storedMemoryCSharp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int sayi1 = 18;
+            int sayi2 = 34;
+
+            Console.WriteLine((sayi1 + sayi2 == 52) ? "İşlemin sonucu 52’ye eşit" : "İşlemin sonucu 52’ye eşit değil");
+        }
+    }
+}</code></pre>
+    <pre>    Konsola <button id="false">İşlemin sonucu 52’ye eşit</button> / <button id="true">İşlemin sonucu 52’ye eşit değil</button> yazdırır.</pre>
+
+    <pre>    Kodda string yazısı alabildiğimiz operatörün adı <button id="false">If</button> / <button id="true">Ternary</button> operatörüdür.</pre>
+
+    <pre>    Toplama operatörü yerine çıkarma operatörü kullanılsaydı sonuç <button id="true">farklı</button> / <button id="false">aynı</button> olurdu.</pre>
+
+    <br><br><br>
+
+    <pre><code>namespace storedMemoryCSharp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List&lt;string&gt; esyaListesi = new List&lt;string&gt;();
+
+            esyaListesi.Add("Dolap");
+            esyaListesi.Add("Masa");
+            esyaListesi.Add("Sandalye");
+            esyaListesi.Add("Halı");
+            esyaListesi.Add("Yatak");
+
+            Console.Write("Alınacak eşyalar: ");
+
+            foreach (string esya in esyaListesi)
+            {
+                Console.Write(esya + ",  ");
+            }
+        }
+    }
+}</code></pre>
+
+    <pre>    Yukarıdaki kod parçasına göre konsola yazdırılan çıktı aşağıdakilerden hangisidir?</pre>
+
+    <button id="false">A</button> <pre class="sIklI">Alınacak eşyalar: Dolap, Masa, Sandalye, Halı, Yatak,</pre><br>
+    <button id="true">B</button> <pre class="sIklI">Alınacak eşyalar: Dolap,  Masa,  Sandalye,  Halı,  Yatak,  </pre><br>
+    <button id="false">C</button> <pre class="sIklI">Alınacak eşyalar: Dolap Masa Sandalye Halı Yatak</pre><br>
+    <button id="false">D</button> <pre class="sIklI">Alınacak eşyalar: Dolap-Masa-Sandalye-Halı-Yatak</pre><br>
+
+    <br><br>
+
+    <pre>    Dinamik programlar yazmak için genellikle input almak zorunludur.</pre>
+    <button id="true">Doğru</button>
+    <button id="false">Yanlış</button>
+
+    <br><br><br>
+
+    <pre>    C# programlama dilinde konsol üzerinden input almak için <code>Console.ReadLine()</code> komutu kullanılır.</pre>
+    <button id="true">Doğru</button>
+    <button id="false">Yanlış</button>
+
+    <br><br><br>
+
+    <pre>    C# programlarında bir hata oluştuğunda program anında çöker. Bunu önlemek için hata yönetiminde Switch-Case kullanılır.</pre>
+    <button id="false">Doğru</button>
+    <button id="true">Yanlış</button>
+
+    <br><br><br>
+
+    <pre>    Await, tanımlanan işlem tamamlanana kadar programı durdurur.</pre>
+    <button id="true">Doğru</button>
+    <button id="false">Yanlış</button>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a onclick="window.location.href='./12 C%23 Paralel Programlama.html'" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a onclick="window.location.href='./14 C%23 Proje.html'" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork’udur.</p>
+        </div>
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const trueFalse = document.querySelectorAll("button");
+        trueFalse.forEach(button => {
+            button.addEventListener("click", () => {
+                if (button.id === "true") {
+                    button.style.backgroundColor = "#4CAF50";
+                } else {
+                    button.style.backgroundColor = "#f44336";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../main.css">
+    <script src="../main.js"></script>
+
+    <link rel="icon" type="image/png" href="img/CiguraData.png">
+
+    <link rel="stylesheet" href="../hljs/vs2015.min.css">
+    <script src="../hljs/highlight.min.js"></script>
+    <script src="../hljs/number.min..js"></script>
+    <script>
+        hljs.highlightAll();
+        hljs.initLineNumbersOnLoad();
+    </script>
+
+    <title>WPF : XAML</title>
+
+</head>
+<body>
+    <h1>XAML</h1>
+
+    <h2>Nedir?</h2>
+    <pre id="preh2">    XML tabanlı bir işaretleme dilidir. Yazılan kodlar, GUI kısmında gerçek zamanlı bir şekilde görünür.</pre>
+
+    <pre id="codeh2"><code class="language-xml">&lt;Window x:Class="MyWPFApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Title="Merhaba Data!" Height="450" Width="800">
+    &lt;Grid> &lt;!--Bu satır pencereye Grid koyar-->
+        &lt;Button Content="Tıkla" Width="100" Height="50" Click="Button_Click"/> &lt;!--Bu satır pencereye buton koyar. Ayrıca özyenilikler ile de bileşenin özellikleri belirlenir-->
+    &lt;/Grid>
+&lt;/Window></code></pre>
+
+    <h2>Bileşenler</h2>
+
+    <h3>Window</h3>
+    <pre id="preh3">    Window, ana penceredir. Tüm bileşenler burada bulunur ve görüntülenir.</pre>
+
+    <pre id="codeh3"><code class="language-xml">&lt;Window x:Class="WPFProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"> &lt;!--    Başlığı "MainWindow" isimli, yükseliği 450px ve genişliği 800px olarak oluşturur-->
+&lt;/Window></code></pre>
+
+    <pre id="preh3">    Bir konteyner olduğu için içine obje konulabilir.</pre>
+
+    <h2>Kaynakça</h2>
+    <ul>
+        <li><a href="https://www.example.com" target="_blank" rel="noopener noreferrer">Example Kaynak 1</a></li>
+    </ul>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a href="./23 WPF Giriş.html" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a href="./25 WPF Bileşenler.html" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2025 SMX Projesinin Bir Fork'dur.</p>
+        </div>
+
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 C%23 İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
